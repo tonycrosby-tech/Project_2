@@ -1,9 +1,9 @@
 // Requiring necessary npm packages
 require('dotenv').config();
-const express = require('express');
-const exphbs = require('express-handlebars');
-const session = require('express-session');
-const helmet = require('helmet');
+var express = require('express');
+var exphbs = require('express-handlebars');
+var session = require('express-session');
+var helmet = require('helmet');
 const morgan = require('morgan');
 // Requiring passport as we've configured it
 const passport = require('./config/passport');
