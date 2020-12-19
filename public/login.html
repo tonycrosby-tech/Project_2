@@ -13,10 +13,32 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
     <link href="stylesheets/style.css" rel="stylesheet" />
   </head>
 
   <body>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper blue darken-3">
+          <a href="#!" class="brand-logo center">WhatChaMaCallIt</a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+
+          <ul class="right hide-on-med-and-down">
+            <li><a class="navbar-brand" href="/"> Login </a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header"></div>
@@ -25,7 +47,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Login Form</h2>
+          <h2 class="text-center">Login</h2>
           <form class="login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -53,6 +75,34 @@
       </div>
     </div>
 
+    <footer class="page-footer blue darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">
+              You can use rows and columns here to organize your footer content.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a
+                  class="grey-text text-lighten-3"
+                  href="https://github.com/tonycrosby-tech/Project_2"
+                  >Github Repo</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container text-center">© 2020 Copyright</div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
   </body>
 </html>
