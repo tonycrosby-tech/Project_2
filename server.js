@@ -12,7 +12,7 @@ const routes = require('./routes');
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const SYNC_OPTIONS = {
-  force: process.env.NODE_ENV === 'test'
+  force: true // process.env.NODE_ENV === 'test'
 };
 
 const db = require('./models');
