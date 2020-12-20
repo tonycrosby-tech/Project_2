@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 // Requiring passport as we've configured it
 const passport = require('./config/passport');
-const routes = require('./routes');
+//const routes = require('./routes');
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
@@ -45,7 +45,15 @@ app.use(passport.session());
 app.use(morgan('tiny'));
 
 // Requiring our routes
-app.use(routes);
+// Requiring our routes
+require("./routes/api/category-api-routes.js")(app);
+require("./routes/api/comments-api-routes.js")(app);
+//require("./routes/api/index.js")(app);
+require("./routes/api/post-api-routes.js")(app);
+require("./routes/api/user-api-routes.js")(app);
+require("./routes/html/index.js")(app);
+
+//app.use(routes);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync(SYNC_OPTIONS).then(() => {
