@@ -26,7 +26,6 @@ module.exports = function (app) {
     });
   });
 
-
   // Route for getting some data about our user to be used client side
   app.get('/api/user_data', (req, res) => {
     if (!req.user) {
@@ -38,7 +37,4 @@ module.exports = function (app) {
     const { password, ...user } = req.user;
     res.json(user);
   });
-
-
-
 };
