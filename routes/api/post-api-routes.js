@@ -47,11 +47,21 @@ module.exports = function (app) {
   app.post('/api/signup', (req, res) => {
     db.User.create(req.body)
       .then(() => {
-        res.redirect(307, '/login');
+        res.redirect(307, '/loginAfterSignup'); // this goes to the app.post
       })
       .catch(err => {
         res.status(401).json(err);
       });
+  });
+
+  // Route for redirecting user to login page as opposed to getting in to
+  // the system directly.  A lot of websites do this.
+  app.post('/loginAfterSignup', passport.authenticate('local'), (req, res) => {
+    res.json({
+      email: req.user.email,
+      id: req.user.id,
+      toLogin: true
+    });
   });
 
   // Using the passport.authenticate middleware with our local strategy.

@@ -30,8 +30,12 @@ $(document).ready(() => {
       email: email,
       password: password
     })
-      .then(() => {
-        window.location.replace('/members');
+      .then((response) => {
+        if (response.toLogin){
+          window.location.replace('/loginAfterSignup'); // should be a $.get
+        } else{
+          window.location.replace('/members');
+        }
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
