@@ -31,9 +31,9 @@ $(document).ready(() => {
       password: password
     })
       .then((response) => {
-        if (response.toLogin){
+        if (response.toLogin) {
           window.location.replace('/loginAfterSignup'); // should be a $.get
-        } else{
+        } else {
           window.location.replace('/members');
         }
         // If there's an error, handle it by throwing up a bootstrap alert

@@ -13,10 +13,10 @@ module.exports = function (app) {
     res.sendFile(path.join(__dirname, '../../public/signup.html'));
   });
 
-  // The GET function.  Come here if the window.replace function tells 
+  // The GET function.  Come here if the window.replace function tells
   // you to.
   app.get('/loginAfterSignup', (req, res) => {
-      res.sendFile(path.join(__dirname, '../../public/login.html'));
+    res.sendFile(path.join(__dirname, '../../public/login.html'));
   });
 
   app.get('/login', (req, res) => {
