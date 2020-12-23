@@ -1,0 +1,52 @@
+<div class="main container row">
+    <div id="" class="col m3">
+        <h5>Filter Posts</h5>
+        <hr>
+        <form>
+            <h6>Search Categories:</h6>
+            <ul>
+                <li value="" disabled selected>Categories</li>
+                <li value="1">Sports</li>
+                <li value="2">Movies</li>
+                <li value="3">Food</li>
+            </ul>
+            <h6>Rating:</h6>
+            <ul>
+                <li value="" disabled selected>Choose Rating</li>
+                <li value="1">Best to Worst</li>
+                <li value="2">Worst to Best</li>
+            </ul>
+            <!-- SEARCH BOX -->
+            <h6>Search Usernames:</h6>
+            <div class="search-div">
+                <input class="search-text" type="text" placeholder="Filter User Names">
+                <ul class="userNameList"></ul>
+            </div>
+        </form>
+        <button class="btn waves-effect waves-light filter-search" id="side-search">Search</button>
+    </div>
+    <div class="col m9">
+        <div class="post">
+            <div class="text-bubble">
+                <div class="bubble z-depth-1">
+                    <p class="body-text">
+                        {{this.Body}}
+                    </p>
+                </div>
+                <div class="triangle-right"></div>
+            </div>
+
+            <div class="icon">
+                <div class="icon-picture"></div>
+                <span class="icon-name">
+                    {{UserName}}
+                </span>
+            </div>
+            <div class="post-info">
+                <p>categories: </p>
+                <span class="time-stamp">{{date and Time}}</span>
+            </div>
+        </div>
+    </div>
+
+</div>
