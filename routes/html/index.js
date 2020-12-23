@@ -1,6 +1,5 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require('path');
-const flash = require('req-flash');
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../../config/middleware/isAuthenticated');
 // const router = require('express').Router();
@@ -58,5 +57,6 @@ module.exports = function (app) {
     res.render('main', _req);
   });
 };
+
 
 // module.exports = router;
