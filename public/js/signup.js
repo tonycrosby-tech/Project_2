@@ -42,7 +42,7 @@ $(document).ready(() => {
   }
 
   function handleLoginErr (err) {
-    $('#alert .msg').text(err.responseJSON);
+    $('#alert .msg').text('Email Already Exists! Please Enter a Different Email Address!');
     $('#alert').fadeIn(500);
   }
 });
