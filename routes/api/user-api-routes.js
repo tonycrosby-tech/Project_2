@@ -1,13 +1,14 @@
+const isAuthenticated = require('../../config/middleware/isAuthenticated');
 const db = require('../../models');
 
 module.exports = function (app) {
-  app.get('/api/users', function (_, res) {
+  app.get('/api/users', isAuthenticated, (_, res) => {
     db.User.findAll({}).then(function (dbUser) {
       res.json(dbUser);
     });
   });
 
-  app.get('/api/users/:id', function (req, res) {
+  app.get('/api/users/:id', isAuthenticated, (req, res) => {
     db.User.findOne({
       where: {
         id: req.params.id
@@ -18,7 +19,7 @@ module.exports = function (app) {
     });
   });
 
-  app.delete('/api/users/:id', function (req, res) {
+  app.delete('/api/users/:id', isAuthenticated, (req, res) => {
     db.User.destroy({
       where: { id: req.params.id }
     }).then(function (dbUser) {

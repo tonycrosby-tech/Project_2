@@ -1,14 +1,15 @@
 const db = require('../../models');
 const passport = require('../../config/passport');
+const isAuthenticated = require('../../config/middleware/isAuthenticated');
 
 module.exports = function (app) {
-  app.get('/api/posts', function (req, res) {
+  app.get('/api/posts', isAuthenticated, (req, res) => {
     db.Post.findAll({ include: [db.User, db.Comments] }).then(function (dbPost) {
       res.json(dbPost);
     });
   });
 
-  app.get('/api/posts/:id', function (req, res) {
+  app.get('/api/posts/:id', isAuthenticated, (req, res) => {
     db.Post.findOne({
       where: {
         id: req.params.id
@@ -19,13 +20,13 @@ module.exports = function (app) {
     });
   });
 
-  app.post('/api/posts', function (req, res) {
+  app.post('/api/posts', isAuthenticated, (req, res) => {
     db.Post.create(req.body).then(function (dbPost) {
       res.json(dbPost);
     });
   });
 
-  app.delete('/api/posts/:id', function (req, res) {
+  app.delete('/api/posts/:id', isAuthenticated, (req, res) => {
     db.Post.destroy({
       where: { id: req.params.id }
     }).then(function (dbPost) {
@@ -33,7 +34,7 @@ module.exports = function (app) {
     });
   });
 
-  app.put('/api/posts', function (req, res) {
+  app.put('/api/posts', isAuthenticated, (req, res) => {
     db.Post.update(req.body, {
       where: { id: req.params.id }
     }).then(function (dbPost) {
@@ -49,7 +50,7 @@ module.exports = function (app) {
       .then(() => {
         res.redirect(307, '/loginAfterSignup'); // this goes to the app.post
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });

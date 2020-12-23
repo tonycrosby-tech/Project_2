@@ -1,13 +1,14 @@
 const db = require('../../models');
+const isAuthenticated = require('../../config/middleware/isAuthenticated');
 
 module.exports = function (app) {
-  app.get('/api/category', function (req, res) {
+  app.get('/api/category', isAuthenticated, (req, res) => {
     db.Category.findAll({}).then(function (dbCategory) {
       res.json(dbCategory);
     });
   });
 
-  app.get('/api/category/:id', function (req, res) {
+  app.get('/api/category/:id', isAuthenticated, (req, res) => {
     db.Category.findAll({
       where: { id: req.params.id },
       include: [db.Post, db.User]
@@ -16,13 +17,13 @@ module.exports = function (app) {
     });
   });
 
-  app.post('/api/category', function (req, res) {
+  app.post('/api/category', isAuthenticated, (req, res) => {
     db.Category.create(req.body).then(function (dbCategory) {
       res.json(dbCategory);
     });
   });
 
-  app.delete('api/category/:id', function (req, res) {
+  app.delete('api/category/:id', isAuthenticated, (req, res) => {
     db.Category.destroy({ where: { id: req.params.id } }).then(function (
       dbCategory
     ) {
