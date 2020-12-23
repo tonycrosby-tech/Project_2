@@ -56,7 +56,7 @@ module.exports = function (app) {
 
   app.get('/home', (_req, res) => {
     res.render('main', _req);
-  })
+  });
 };
 
 // module.exports = router;

@@ -41,7 +41,7 @@ $(document).ready(() => {
       .catch(handleLoginErr);
   }
 
-  function handleLoginErr (err) {
+  function handleLoginErr () {
     $('#alert .msg').text('Email Already Exists! Please Enter a Different Email Address!');
     $('#alert').fadeIn(500);
   }
