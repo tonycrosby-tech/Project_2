@@ -45,7 +45,7 @@ module.exports = function (app) {
     res.render('about', _req);
   });
   app.get('/home', (_req, res) => {
-    res.render('main', _req);
+    res.render('index', _req);
   });
 };
 // module.exports = router;
