@@ -16,7 +16,7 @@ passport.use(
         where: {
           email
         }
-      }).then(dbUser => {
+      }).then((dbUser) => {
         // If there's no user with the given email
         // If there is a user with the given email, but the password the user gives us is incorrect
         if (!dbUser || !dbUser.validPassword(password)) {
