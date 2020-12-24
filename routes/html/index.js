@@ -35,16 +35,16 @@ module.exports = function (app) {
     const userEmail = _req.user.email;
     res.render('members', { userEmail });
   });
-  app.get('/help', (_req, res) => {
+  app.get('/help', isAuthenticated, (_req, res) => {
     res.render('help', _req);
   });
-  app.get('/forum', (_req, res) => {
+  app.get('/forum', isAuthenticated, (_req, res) => {
     res.render('forum', _req);
   });
-  app.get('/about', (_req, res) => {
+  app.get('/about', isAuthenticated, (_req, res) => {
     res.render('about', _req);
   });
-  app.get('/home', (_req, res) => {
+  app.get('/home', isAuthenticated, (_req, res) => {
     res.render('index', _req);
   });
 };
