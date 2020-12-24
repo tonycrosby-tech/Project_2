@@ -45,7 +45,6 @@ app.use(passport.session());
 app.use(morgan('tiny'));
 
 // Requiring our routes
-// Requiring our routes
 require('./routes/api/category-api-routes.js')(app);
 require('./routes/api/comments-api-routes.js')(app);
 // require("./routes/api/index.js")(app);

@@ -9,16 +9,13 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/members');
     }
-
     res.sendFile(path.join(__dirname, '../../public/signup.html'));
   });
-
   // The GET function.  Come here if the window.replace function tells
   // you to.
   app.get('/loginAfterSignup', (req, res) => {
     res.sendFile(path.join(__dirname, '../../public/login.html'));
   });
-
   app.get('/login', (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -27,19 +24,28 @@ module.exports = function (app) {
 
     res.sendFile(path.join(__dirname, '../../public/login.html'));
   });
-
   // Route for logging user out
   app.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/');
   });
-
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/members', isAuthenticated, (_req, res) => {
     const userEmail = _req.user.email;
     res.render('members', { userEmail });
   });
+  app.get('/help', isAuthenticated, (_req, res) => {
+    res.render('help', _req);
+  });
+  app.get('/forum', isAuthenticated, (_req, res) => {
+    res.render('forum', _req);
+  });
+  app.get('/about', isAuthenticated, (_req, res) => {
+    res.render('about', _req);
+  });
+  app.get('/home', isAuthenticated, (_req, res) => {
+    res.render('index', _req);
+  });
 };
-
 // module.exports = router;
