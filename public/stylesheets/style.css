@@ -16,10 +16,6 @@ a:link,
 body_alink {
   color: #d1dee7;
 }
-a:visited,
-body_avisited {
-  color: #e1e9ee;
-}
 a:hover,
 a:active,
 body_ahover {
