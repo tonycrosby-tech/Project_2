@@ -106,3 +106,15 @@ li {
   background: #ebf0f4;
   color: #000;
 }
+.spacer {
+  padding: 7px;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 1px;
+  border-color: grey;
+}
