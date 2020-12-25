@@ -42,7 +42,7 @@ module.exports = function (app) {
     res.render('forum', _req);
   });
   app.get('/about', isAuthenticated, (_req, res) => {
-    res.render('about', _req);
+    res.render('about', _req.user);
   });
   app.get('/home', isAuthenticated, (_req, res) => {
     res.render('index', _req);
