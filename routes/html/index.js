@@ -36,7 +36,7 @@ module.exports = function (app) {
     res.render('members', { userEmail });
   });
   app.get('/help', isAuthenticated, (_req, res) => {
-    res.render('help', _req);
+    res.render('help', _req.user);
   });
   app.get('/forum', isAuthenticated, (_req, res) => {
     res.render('forum', _req);
