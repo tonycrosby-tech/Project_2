@@ -122,3 +122,6 @@ table {
 nav ul a {
   padding: 20px 15px;
 }
+.msg {
+  color: red;
+}
