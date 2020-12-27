@@ -41,18 +41,16 @@ module.exports = function (app) {
   });
 
   app.get('/forum', isAuthenticated, (_req, res) => {
-
     db.Category.findAll({})
       .then(function (dbCategory) {
-        
-        catarray = [];
-        for (let i = 0; i < dbCategory.length; i++){
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
           const cat = dbCategory[i];
           const bod = cat.dataValues;
           catarray.push(bod);
         }
 
-        var hbsObject = {
+        const hbsObject = {
           categories: catarray
         };
 
