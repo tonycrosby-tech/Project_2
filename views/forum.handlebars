@@ -25,6 +25,9 @@
         </form>
         <button class="btn waves-effect waves-light filter-search" id="side-search">Search</button>
     </div>
+
+
+
     <div class="col m9">
         <div class="post">
             <div class="text-bubble">
@@ -44,6 +47,12 @@
             </div>
             <div class="post-info">
                 <p>categories: </p>
+                <ul>
+                    {{#each categories}}
+                    {{> categories/categories-block }}
+                    {{/each}}
+                </ul>
+
                 {{!-- <span class="time-stamp">{{date and Time}}</span> --}}
             </div>
         </div>
