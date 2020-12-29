@@ -32,10 +32,45 @@ module.exports = function (app) {
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get('/members', isAuthenticated, (_req, res) => {
+  app.get('/members', isAuthenticated,  (_req, res) => {
     const userEmail = _req.user.email;
-    res.render('members', { userEmail });
+
+    // the following code is untested!!!  I don't know that dbPost will automatically
+    // reduce itself to posts, categories, users.
+    db.Post.findAll({ include: [db.User, db.Comments, db.Category] })
+      .then(function (dbPost) {
+        // const thebod = dbPost.body.Category;
+        // const test2 = dbPost.Category.body;
+        // const { Category, User, Comments } = dbPost;
+        postarray = [];
+        catarray = [];
+        commentarray = [];
+        userarray = [];
+
+        dbPost.forEach(element => {
+          postarray.push(element.dataValues);
+          catarray.push(element.Category.dataValues) ;
+          const {password, ...rest}  =  element.User.dataValues;
+          userarray.push(rest);
+          commentarray.push(element.Comments.dataValues);
+        });
+
+        const hbsObject = {
+          categories: catarray,
+          posts: postarray,
+          comments: commentarray,
+          users : userarray,
+          userEmail: _req.user.email
+        };
+
+        
+        res.render('members', hbsObject);
+      });
+
+
+     // res.render('members', { userEmail });
   });
+
   app.get('/help', isAuthenticated, (_req, res) => {
     res.render('help', _req.user);
   });

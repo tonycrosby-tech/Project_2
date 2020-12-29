@@ -2,13 +2,15 @@ const $ = window.$;
 $(document).ready(() => {
   //   // This file just does a GET request to figure out which user is logged in
   //   // and updates the HTML on the page
-  // const deb = 0;
-  // $.get('/api/category')
-  // .then(data => {
-  //    // $('.member-name').text(data.email);
-  //    const debug = 0;
-  //    console.log(data);
-  //    //location.reload();
-  //    // location.reload();
-  // });
+//   $("#create-category").on("click", function(event) {
+//     event.preventDefault();
+//     const cat = $("input#category_creator").val();
+//     $.ajax('/api/category', {cat})
+//     .then((result) => {
+//         console.log(result);
+//         location.reload();
+
+//     });
+
+//   });
 });

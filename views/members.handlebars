@@ -11,7 +11,12 @@
             <td class="alt1" colspan="6">
                 <center>
                     WhatChaMaCallIt is a brand new forum! :)
-                    <br><br>Threads: {{ categories }}, Posts: {{ posts }}, Members: {{ users }}
+                    <br><br>Threads: {{#each categories}}
+                    {{> members/categories-block}}
+                    {{/each}}
+
+                    ,
+                    Posts: {{ posts }}, Members: {{ users }}
                     <br><br>
                     If you have a complaint, feedback, or an issue, then please contact us on github by clicking this
                     link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
