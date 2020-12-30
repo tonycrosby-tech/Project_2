@@ -11,19 +11,31 @@
             <td class="alt1" colspan="6">
                 <center>
                     WhatChaMaCallIt is a brand new forum! :)
-                    <br><br>Threads: {{#each categories}}
-                    {{> members/categories-block}}
+                    {{#each alltables}}
+                        {{#each categories}}
+                        {{> members/categories-block}}
+                        {{/each}}
+
+                         {{#each posts}}
+                         {{> members/posts-block}}
+                         {{/each}}
+
+                         {{#each users}}
+                         {{> members/users-block}}
+                         {{/each}}
+
                     {{/each}}
 
+
+                    <br><br>Threads:
+                   
+
                     ,
-                    Posts: 
-                    {{#each posts}}
-                    {{> members/posts-block}}
-                    {{/each}}
-                    
-                    , Members: {{#each users}}
-                    {{> members/users-block}}
-                    {{/each}}
+                    Posts:
+                   
+                    , Members: 
+
+
 
                     <br><br>
                     If you have a complaint, feedback, or an issue, then please contact us on github by clicking this

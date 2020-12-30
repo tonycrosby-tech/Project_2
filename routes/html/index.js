@@ -46,6 +46,7 @@ module.exports = function (app) {
         const catarray = [];
         const commentarray = [];
         const userarray = [];
+        const arrayall = [];
 
         dbPost.forEach(element => {
           postarray.push(element.dataValues);
@@ -53,13 +54,19 @@ module.exports = function (app) {
           const { password, ...rest } = element.User.dataValues;
           userarray.push(rest);
           commentarray.push(element.Comments.dataValues);
+
+          const hbsObj = {
+            categories: catarray,
+            posts: postarray,
+            comments: commentarray,
+            users: userarray
+          };
+
+          arrayall.push(hbsObj);
         });
 
         const hbsObject = {
-          categories: catarray,
-          posts: postarray,
-          comments: commentarray,
-          users: userarray,
+          alltables: arrayall,
           userEmail: _req.user.email
         };
 
