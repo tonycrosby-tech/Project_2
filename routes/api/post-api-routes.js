@@ -21,9 +21,19 @@ module.exports = function (app) {
   });
 
   app.post('/api/posts', isAuthenticated, (req, res) => {
-    db.Post.create(req.body).then(function (dbPost) {
-      res.json(dbPost);
-    });
+    const intcat = parseInt(req.body.CategoryId);
+
+    const createpost = {
+      UserId: req.user.id,
+      title: req.body.title,
+      body: req.body.body,
+      CategoryId: intcat
+    };
+
+    db.Post.create(createpost)
+      .then(function (dbPost) {
+        res.json(dbPost);
+      });
   });
 
   app.delete('/api/posts/:id', isAuthenticated, (req, res) => {

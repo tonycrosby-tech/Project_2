@@ -6,7 +6,7 @@
         <h5 class="center">Create Posts</h5>
         <hr>
         <br>
-        <form>
+        <form id="formCreatePost">
             <h6>Select Categories:</h6>
             <select id='myCategories'>
                 <option value="" disabled selected>Categories</option>
@@ -16,17 +16,20 @@
             </select>
             <div class="row">
                 <div class="col s12">
-                    <label for="textarea1">Title:<textarea id="textarea1"
+                    <label for="usersPosting">Title:<textarea id="titlePost"
                             class="materialize-textarea"></textarea></label>
                 </div>
                 <div class="col s12">
-                    <label for="textarea1">Write your post here<textarea id="textarea1"
+                    <label>Write your post here<textarea id="usersPosting"
                             class="materialize-textarea"></textarea></label>
                 </div>
             </div>
+            <button type="submit" class="btn waves-effect waves-light blue darken-4 create-post" id="createPost">Create</button>
+
         </form>
-        <button class="btn waves-effect waves-light blue darken-4 create-post" id="side-search">Create</button>
-        {{!-- <button class="btn waves-effect waves-light blue darken-4 filter-search" id="side-search">Search post</button> --}}
+        {{!-- <button class="btn waves-effect waves-light blue darken-4 filter-search" id="side-search">Search
+            post</button> --}}
     </div>
 
 </div>
+<script src="js/posts.js"></script>
