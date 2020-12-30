@@ -1,44 +1,4 @@
-<div class="spacer"></div>
-
-<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-    <tbody>
-        <tr>
-            <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }} </b>-
-                This is where the magic Happens!
-            </td>
-        </tr>
-        <tr>
-            <td class="alt1" colspan="6">
-                <center>
-                    WhatChaMaCallIt is a brand new forum! :)
-                    <br><br>Threads: {{#each categories}}
-                    {{> members/categories-block}}
-                    {{/each}}
-
-                    ,
-                    Posts: 
-                    {{#each posts}}
-                    {{> members/posts-block}}
-                    {{/each}}
-                    
-                    , Members: {{#each users}}
-                    {{> members/users-block}}
-                    {{/each}}
-
-                    <br><br>
-                    If you have a complaint, feedback, or an issue, then please contact us on github by clicking this
-                    link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
-                        <font color="blue"><b>Contact us</b></font>
-                    </a>
-                </center>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-<div class="spacer"></div>
-
-<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+`<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
     <thead>
         <tr>
             <td colspan="3" class="tcat center">
@@ -55,7 +15,6 @@
             <td class="thead" width="200">Last Post</td>
             <td class="thead">Threads</td>
             <td class="thead">Posts</td>
-            <td class="thead">View Count</td>
         </tr>
         <tr align="center">
             <td class="alt2"></td>
@@ -85,7 +44,6 @@
             </td>
             <td alt="Thread Count" class="alt1">0</td>
             <td alt="Post Count" class="alt2">0</td>
-            <td alt="View Count" class="alt1">0</td>
         </tr>
 
         <tr align="center">
@@ -116,7 +74,6 @@
             </td>
             <td alt="Thread Count" class="alt1">0</td>
             <td alt="Post Count" class="alt2">0</td>
-            <td alt="View Count" class="alt1">0</td>
         </tr>
         <tr align="center">
             <td class="alt2"></td>
@@ -146,10 +103,7 @@
             </td>
             <td alt="Thread Count" class="alt1">0</td>
             <td alt="Post Count" class="alt2">0</td>
-            <td alt="View Count" class="alt1">0</td>
         </tr>
 
     </tbody>
-</table>
-
-<div class="spacer"></div>
+</table>`
