@@ -1,11 +1,11 @@
 const $ = window.$;
 $(document).ready(() => {
-  const createPost = $('form#formCreatePost');
+  const createPost = $('#createPost');
   const usersPosting = $('#usersPosting');
   const titlePost = $('#titlePost');
   const postCategory = $('#myCategories');
 
-  createPost.on('submit', event => {
+  createPost.on('click', event => {
     event.preventDefault();
 
     const selectedCat = postCategory.val();
