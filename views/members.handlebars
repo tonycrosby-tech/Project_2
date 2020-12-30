@@ -1,30 +1,46 @@
 <div class="spacer"></div>
 
-<table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-    <tbody>
-        <tr>
-            <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }} </b>-
-                This is where the magic Happens!
-            </td>
-        </tr>
-        <tr>
-            <td class="alt1" colspan="6">
-                <center>
-                    WhatChaMaCallIt is a brand new forum! :)
-                    <br><br>Threads: {{ categories }}, Posts: {{ posts }}, Members: {{ users }}
-                    <br><br>
-                    If you have a complaint, feedback, or an issue, then please contact us on github by clicking this
-                    link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
-                        <font color="blue"><b>Contact us</b></font>
-                    </a>
-                </center>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
 
-<div class="spacer"></div>
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+        <tbody>
+            <tr>
+                <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
+                    </b>-
+                    This is where the magic Happens!
+                </td>
+            </tr>
+            <tr>
+                <td class="alt1" colspan="6">
+                    <center>
+                        WhatChaMaCallIt is a brand new forum! :)
+                        {{#each alltables}}
+                        {{#each categories}}
+                        {{> members/categories-block}}
+                        {{/each}}
 
+                        {{#each posts}}
+                        {{> members/posts-block}}
+                        {{/each}}
+
+                        {{#each users}}
+                        {{> members/users-block}}
+                        {{/each}}
+
+                        {{/each}}
+
+
+                        <br><br>Threads:
+
+
+                        ,
+                        Posts:
+
+                        , Members:
+
+
+
+<<<<<<< Updated upstream
 <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
     <thead>
         <tr>
@@ -163,5 +179,299 @@
         </tr>
     </tbody>
 </table>
+=======
+                        <br><br>
+                        If you have a complaint, feedback, or an issue, then please contact us on github by clicking
+                        this
+                        link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
+                            <font color="blue"><b>Contact us</b></font>
+                        </a>
+                    </center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-<div class="spacer"></div>
+    <a href="/category"><button class='category-button' id='new-category'><i class='material-icons'>add</i>Create
+            New Thread</button></a>
+
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+        <thead>
+            <tr>
+                <td colspan="3" class="tcat">Stuff thats <b style='color: red;'>HOT</b> Right now!</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr valign="top">
+                <td class="thead" align="left" width="25%"> <span id="hottest-threads">Hottest Threads (in last 7
+                        days)</span> </td>
+                <td class="thead" align="left" width="50%"> <span id="latest-posts">Latest Posts</span> </td>
+            </tr>
+            <tr valign="top" style="height:100%">
+                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
+                    <div id="top-categories">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont">1&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont"><a href="#"
+                                            title="Name of category goes here">Sports</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
+                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont"><a href="#"
+                                            title="Name of category goes here">Movies</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
+                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont"><a href="#"
+                                            title="Name of category goes here">Food</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+
+                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
+                    <div id="newest-posts">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                            <tbody>
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">1&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">2&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">3&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">4&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">5&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">6&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">7&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">8&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding:1px" class="smallfont">9&nbsp;<a href="#"
+                                            title="Post title goes here">Post title goes here</a></td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="username"><b>
+                                                <font color="#2F4F4F">username</font>
+                                            </b></a>&nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">DATE, TIME</td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">Category goes here</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="thead" colspan="3">
+                    <span id="data-status">Fetching data in 60 seconds.</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="spacer"></div>
+
+    <div style="padding-bottom:15px">
+        <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
+            <thead>
+                <tr>
+                    <td class="tcat" colspan="0">
+                        <span class="smallfont"><strong>» <a href="#">Search
+                                    Forums</a></strong></span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody id="search-input">
+                <tr>
+                    <td class="alt2">
+                        <input class="bginput" name="query" size="13" type="text"> <input type="submit" class="button"
+                            value="Go">
+                        <div class="smallfont">» <a href="#">Advanced Search</a>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+>>>>>>> Stashed changes
+
+    <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
+        <thead>
+            <tr>
+                <td class="tcat" colspan="6">
+                    <span class="smallfont"><strong>» Recent Threads</strong></span>
+                </td>
+            </tr>
+        </thead>
+        <tbody id="recent-threads" style="">
+            <tr>
+                <td class="thead" width="50%">Thread / Thread Starter</td>
+                <td align="center" class="thead" style="white-space: nowrap" width="25%">Last Post</td>
+                <td class="thead" width="2%">Replies</td>
+                <td class="thead" width="2%">Views</td>
+                <td align="center" class="thead" width="20%">Forum</td>
+            </tr>
+            <tr>
+                <td class="alt1">
+                    <a href="#"></a>
+                    <a href="#" title="Hi there. "><strong>Topic/Post Title</strong></a>
+                    <div class="smallfont">
+                        <span style="cursor:pointer">
+                            {{!-- onclick="window.open('our members profile link if he/she has one')"> --}}
+                            username</span>
+                    </div>
+                    <div class="smallfont">Day, Month Year <span class="time">24HR/TIME</span></div>
+                </td>
+                <td class="alt2">
+                    <div class="smallfont" style="text-align:right; white-space:nowrap">
+                        Today <span class="time">00:00 PM</span><br>
+                        by <a href="#" rel="nofollow">username</a> <a href="#"></a>
+                    </div>
+                </td>
+                <td align="center" class="alt1"><span class="smallfont">0</span></td>
+                <td align="center" class="alt2"><span class="smallfont">0</span></td>
+                <td class="alt1"><span class="smallfont"><a href="#">Category goes here</a></span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
