@@ -156,3 +156,8 @@ body {
 main {
   flex: 1 0 auto;
 }
+
+.category-content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}

@@ -1,5 +1,47 @@
 <div class="spacer"></div>
+
 <div class="container">
+
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+        <tbody>
+            <tr>
+                <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
+                    </b>-
+                    This is where the magic Happens!
+                </td>
+            </tr>
+            <tr>
+                <td class="alt1" colspan="6">
+                    <center>
+                        WhatChaMaCallIt is a brand new forum! :)
+                        <br><br>Threads: {{#each categories}}
+                        {{> members/categories-block}}
+                        {{/each}}
+
+                        ,
+                        Posts:
+                        {{#each posts}}
+                        {{> members/posts-block}}
+                        {{/each}}
+
+                        , Members: {{#each users}}
+                        {{> members/users-block}}
+                        {{/each}}
+
+                        <br><br>
+                        If you have a complaint, feedback, or an issue, then please contact us on github by clicking
+                        this
+                        link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
+                            <font color="blue"><b>Contact us</b></font>
+                        </a>
+                    </center>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="spacer"></div>
+
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
         <thead>
             <tr>
@@ -114,3 +156,6 @@
         </tbody>
     </table>
 </div>
+
+<div class="spacer"></div>
+<script src="js/forum.js"></script>
