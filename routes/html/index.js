@@ -36,13 +36,13 @@ module.exports = function (app) {
     res.render('members', { userEmail });
   });
   app.get('/help', isAuthenticated, (_req, res) => {
-    res.render('help', _req);
+    res.render('help', _req.user);
   });
   app.get('/forum', isAuthenticated, (_req, res) => {
     res.render('forum', _req);
   });
   app.get('/about', isAuthenticated, (_req, res) => {
-    res.render('about', _req);
+    res.render('about', _req.user);
   });
   app.get('/home', isAuthenticated, (_req, res) => {
     res.render('index', _req);
