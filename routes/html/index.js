@@ -91,10 +91,30 @@ module.exports = function (app) {
         }
 
         const hbsObject = {
-          categories: catarray
+          categories: catarray,
+          userEmail: _req.user.email
         };
 
         res.render('forum', hbsObject);
+      });
+  });
+
+  app.get('/category', isAuthenticated, (_req, res) => {
+    db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
+
+        const hbsObject = {
+          categories: catarray,
+          userEmail: _req.user.email
+        };
+
+        res.render('category', hbsObject);
       });
   });
 
