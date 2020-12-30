@@ -1,5 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require('path');
+const db = require('../../models');
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../../config/middleware/isAuthenticated');
 // const router = require('express').Router();
@@ -32,15 +33,64 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/members', isAuthenticated, (_req, res) => {
-    const userEmail = _req.user.email;
-    res.render('members', { userEmail });
+    // const userEmail = _req.user.email;
+
+    // the following code is untested!!!  I don't know that dbPost will automatically
+    // reduce itself to posts, categories, users.
+    db.Post.findAll({ include: [db.User, db.Comments, db.Category] })
+      .then(function (dbPost) {
+        // const thebod = dbPost.body.Category;
+        // const test2 = dbPost.Category.body;
+        // const { Category, User, Comments } = dbPost;
+        const postarray = [];
+        const catarray = [];
+        const commentarray = [];
+        const userarray = [];
+
+        dbPost.forEach(element => {
+          postarray.push(element.dataValues);
+          catarray.push(element.Category.dataValues);
+          const { password, ...rest } = element.User.dataValues;
+          userarray.push(rest);
+          commentarray.push(element.Comments.dataValues);
+        });
+
+        const hbsObject = {
+          categories: catarray,
+          posts: postarray,
+          comments: commentarray,
+          users: userarray,
+          userEmail: _req.user.email
+        };
+
+        res.render('members', hbsObject);
+      });
+
+    // res.render('members', { userEmail });
   });
+
   app.get('/help', isAuthenticated, (_req, res) => {
     res.render('help', _req.user);
   });
+
   app.get('/forum', isAuthenticated, (_req, res) => {
-    res.render('forum', _req);
+    db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
+
+        const hbsObject = {
+          categories: catarray
+        };
+
+        res.render('forum', hbsObject);
+      });
   });
+
   app.get('/about', isAuthenticated, (_req, res) => {
     res.render('about', _req.user);
   });
