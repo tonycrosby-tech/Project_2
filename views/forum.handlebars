@@ -8,20 +8,20 @@
         <br>
         <form>
             <h6>Select Categories:</h6>
-            <select>
+            <select id="myCategories">
                 <option value="" disabled selected>Categories</option>
                 {{#each categories}}
-                    <option value = "{{@index}}"> {{ this.name }} </option>
+                    <option value = "{{id}}"> {{ this.name }} </option>
                 {{/each}}
             </select>
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="textarea1" class="materialize-textarea"></textarea>
-                    <label for="textarea1">Write your post here</label>
+                    <textarea id="usersPosting"  placeholder="Write your post here" class="materialize-textarea"></textarea>
+                    <label for="textareaPost">Write your post here</label>
                 </div>
             </div>
         </form>
-        <button class="btn waves-effect waves-light create-post" id="side-search">Create</button>
+        <button class="btn waves-effect waves-light create-post" id="createPost">Create</button>
         <button class="btn waves-effect waves-light filter-search" id="side-search">Search post</button>
     </div>
 </div>
