@@ -46,7 +46,7 @@ $(document).ready(() => {
   }
 
   function handleLoginErr () {
-    $('#alert .msg').text('Email Already Exists! Please Enter a Different Email Address!');
+    $('#alert .msg').text('Email or Username Already Exists! Please Enter a Different Email Address or Username!');
     $('#alert').fadeIn(500);
   }
 });
