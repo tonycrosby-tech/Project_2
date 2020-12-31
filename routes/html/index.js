@@ -10,6 +10,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/members');
     }
+
     res.sendFile(path.join(__dirname, '../../public/signup.html'));
   });
   // The GET function.  Come here if the window.replace function tells
@@ -39,8 +40,12 @@ module.exports = function (app) {
 
     // the following code is untested!!!  I don't know that dbPost will automatically
     // reduce itself to posts, categories, users.
-    db.Post.findAll({ include: [db.User, db.Comments, db.Category] }).then(
-      function (dbPost) {
+    db.Post.findAll({
+      include: [db.User, db.Comments, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    })
+      .then(function (dbPost) {
         // const thebod = dbPost.body.Category;
         // const test2 = dbPost.Category.body;
         // const { Category, User, Comments } = dbPost;
@@ -72,11 +77,8 @@ module.exports = function (app) {
           userEmail: _req.user.email
         };
 
-        console.log(hbsObject);
-
         res.render('members', hbsObject);
-      }
-    );
+      });
 
     // res.render('members', { userEmail });
   });
@@ -86,39 +88,44 @@ module.exports = function (app) {
   });
 
   app.get('/forum', isAuthenticated, (_req, res) => {
-    db.Category.findAll({}).then(function (dbCategory) {
-      const catarray = [];
-      for (let i = 0; i < dbCategory.length; i++) {
-        const cat = dbCategory[i];
-        const bod = cat.dataValues;
-        catarray.push(bod);
-      }
+    db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
 
-      const hbsObject = {
-        categories: catarray,
-        userEmail: _req.user.email
-      };
+        const hbsObject = {
+          categories: catarray,
+          userEmail: _req.user.email
+        };
 
-      res.render('forum', hbsObject);
-    });
+        res.render('forum', hbsObject);
+      });
   });
 
   app.get('/category', isAuthenticated, (_req, res) => {
-    db.Category.findAll({}).then(function (dbCategory) {
-      const catarray = [];
-      for (let i = 0; i < dbCategory.length; i++) {
-        const cat = dbCategory[i];
-        const bod = cat.dataValues;
-        catarray.push(bod);
-      }
+    const catgoriesGot = privateHelperGetCats(_req);
+    // db.Category.findAll({})
+    //   .then(function (dbCategory) {
+    //     const catarray = [];
+    //     for (let i = 0; i < dbCategory.length; i++) {
+    //       const cat = dbCategory[i];
+    //       const bod = cat.dataValues;
+    //       catarray.push(bod);
+    //     }
 
-      const hbsObject = {
-        categories: catarray,
-        userEmail: _req.user.email
-      };
+    //     const hbsObject = {
+    //       categories: catarray,
+    //       userEmail: _req.user.email
+    //     };
 
-      res.render('category', hbsObject);
-    });
+    //     res.render('category', catgoriesGot);
+    //   });
+
+    res.render('category', catgoriesGot);
   });
 
   app.get('/about', isAuthenticated, (_req, res) => {
@@ -130,23 +137,34 @@ module.exports = function (app) {
 
   app.get('/posts', isAuthenticated, (req, res) => {
     if (req.user) {
+      const categoriesReceived = privateHelperGetCats();
       const hsbsObject = {
+        categories: categoriesReceived,
         userEmail: req.user.email
       };
+
       res.render('posts', hsbsObject);
     } else {
       res.sendFile(path.join(__dirname, '../../public/login.html'));
     }
   });
 
-  app.get('/posts', isAuthenticated, (req, res) => {
-    if (req.user) {
-      const hsbsObject = {
-        userEmail: req.user.email
-      };
-      res.render('posts', hsbsObject);
-    } else {
-      res.sendFile(path.join(__dirname, '../../public/login.html'));
-    }
-  });
+  const privateHelperGetCats = (_req) => {
+    db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
+
+        const hbsObject = {
+          categories: catarray,
+          userEmail: _req.user.email
+        };
+
+        return hbsObject;
+      });
+  };
 };
