@@ -10,6 +10,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/members');
     }
+
     res.sendFile(path.join(__dirname, '../../public/signup.html'));
   });
   // The GET function.  Come here if the window.replace function tells
@@ -39,7 +40,11 @@ module.exports = function (app) {
 
     // the following code is untested!!!  I don't know that dbPost will automatically
     // reduce itself to posts, categories, users.
-    db.Post.findAll({ include: [db.User, db.Comments, db.Category] })
+    db.Post.findAll({
+      include: [db.User, db.Comments, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    })
       .then(function (dbPost) {
         // const thebod = dbPost.body.Category;
         // const test2 = dbPost.Category.body;
@@ -50,7 +55,7 @@ module.exports = function (app) {
         const userarray = [];
         const arrayall = [];
 
-        dbPost.forEach(element => {
+        dbPost.forEach((element) => {
           postarray.push(element.dataValues);
           catarray.push(element.Category.dataValues);
           const { password, ...rest } = element.User.dataValues;
@@ -102,6 +107,49 @@ module.exports = function (app) {
   });
 
   app.get('/category', isAuthenticated, (_req, res) => {
+    const catgoriesGot = privateHelperGetCats(_req);
+    // db.Category.findAll({})
+    //   .then(function (dbCategory) {
+    //     const catarray = [];
+    //     for (let i = 0; i < dbCategory.length; i++) {
+    //       const cat = dbCategory[i];
+    //       const bod = cat.dataValues;
+    //       catarray.push(bod);
+    //     }
+
+    //     const hbsObject = {
+    //       categories: catarray,
+    //       userEmail: _req.user.email
+    //     };
+
+    //     res.render('category', catgoriesGot);
+    //   });
+
+    res.render('category', catgoriesGot);
+  });
+
+  app.get('/about', isAuthenticated, (_req, res) => {
+    res.render('about', _req.user);
+  });
+  app.get('/home', isAuthenticated, (_req, res) => {
+    res.render('index', _req);
+  });
+
+  app.get('/posts', isAuthenticated, (req, res) => {
+    if (req.user) {
+      const categoriesReceived = privateHelperGetCats();
+      const hsbsObject = {
+        categories: categoriesReceived,
+        userEmail: req.user.email
+      };
+
+      res.render('posts', hsbsObject);
+    } else {
+      res.sendFile(path.join(__dirname, '../../public/login.html'));
+    }
+  });
+
+  const privateHelperGetCats = (_req) => {
     db.Category.findAll({})
       .then(function (dbCategory) {
         const catarray = [];
@@ -116,25 +164,7 @@ module.exports = function (app) {
           userEmail: _req.user.email
         };
 
-        res.render('category', hbsObject);
+        return hbsObject;
       });
-  });
-
-  app.get('/about', isAuthenticated, (_req, res) => {
-    res.render('about', _req.user);
-  });
-  app.get('/home', isAuthenticated, (_req, res) => {
-    res.render('index', _req);
-  });
-
-  app.get('/posts', isAuthenticated, (req, res) => {
-    if (req.user) {
-      const hsbsObject = {
-        userEmail: req.user.email
-      };
-      res.render('posts', hsbsObject);
-    } else {
-      res.sendFile(path.join(__dirname, '../../public/login.html'));
-    }
-  });
+  };
 };
