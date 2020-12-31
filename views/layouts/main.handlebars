@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <link href="stylesheets/style.css" rel="stylesheet" />
+  
 </head>
 
 <body>
@@ -71,7 +72,11 @@
     $(document).ready(function () {
       $('.sidenav').sidenav();
     });
+    $(document).ready(function () {
+      $('select').formSelect();
+    });
   </script>
+  <script src="js/forum.js"></script>
 </body>
 
 </html>
