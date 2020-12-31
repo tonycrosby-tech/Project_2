@@ -128,3 +128,36 @@ nav ul a {
 .smallfont {
   font-size: 10px;
 }
+
+.footerLinks li a,
+.footerLinks a:visited {
+  color: #888;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  padding: 3px;
+}
+.footerLinks li,
+.footerLinks a,
+.footerLinks a:visited {
+  line-height: 17px;
+}
+.pageContent {
+  padding: 20px 0px 20px 20px;
+  background: #f9f9f9;
+  border-radius: 0;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.category-content {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}

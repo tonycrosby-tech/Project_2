@@ -11,7 +11,7 @@
             <select>
                 <option value="" disabled selected>Categories</option>
                 {{#each categories}}
-                    <option value = "{{@index}}"> {{ this }} </option>
+                    <option value = "{{@index}}"> {{ this.name }} </option>
                 {{/each}}
             </select>
             <div class="row">
@@ -24,5 +24,6 @@
         <button class="btn waves-effect waves-light create-post" id="side-search">Create</button>
         <button class="btn waves-effect waves-light filter-search" id="side-search">Search post</button>
     </div>
-
 </div>
+
+    <script src="js/forum.js"></script>
