@@ -10,13 +10,16 @@
             <h6>Available Categories:</h6>
             <select id='myCategories'>
                 <option value="" disabled selected>Categories</option>
-                <option value="1">Sports</option>
+                {{#each categories}}
+                {{> categories/categories-block}}
+                {{/each}}
+                {{!-- <option value="1">Sports</option>
                 <option value="2">Movies</option>
-                <option value="3">Food</option>
+                <option value="3">Food</option> --}}
             </select>
             <div class="row">
                 <div class="col s12">
-                    <label for="textarea1">Title:<textarea id="textarea1"
+                    <label for="textarea1">Title:<textarea id="textareaCategory"
                             class="materialize-textarea"></textarea></label>
                 </div>
             </div>

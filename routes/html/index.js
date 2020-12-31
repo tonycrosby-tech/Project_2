@@ -18,7 +18,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../../public/login.html"));
   });
 
+<<<<<<< HEAD
   app.get("/login", (req, res) => {
+=======
+  app.get('/login', (req, res) => {
+>>>>>>> ae08f68c6afa6e783881f5d16be3271f950d69a7
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
@@ -49,8 +53,11 @@ module.exports = function(app) {
         const commentarray = [];
         const userarray = [];
         const arrayall = [];
+<<<<<<< HEAD
 
         console.log(dbPost);
+=======
+>>>>>>> ae08f68c6afa6e783881f5d16be3271f950d69a7
 
         dbPost.forEach((element) => {
           postarray.push(element.dataValues);
@@ -63,8 +70,12 @@ module.exports = function(app) {
             categories: catarray,
             posts: postarray,
             comments: commentarray,
+<<<<<<< HEAD
             users: userarray,
             userEmail: _req.user.email,
+=======
+            users: userarray
+>>>>>>> ae08f68c6afa6e783881f5d16be3271f950d69a7
           };
 
           arrayall.push(hbsObj);
@@ -72,7 +83,7 @@ module.exports = function(app) {
 
         const hbsObject = {
           alltables: arrayall,
-          userEmail: _req.user.email,
+          userEmail: _req.user.email
         };
 
         console.log(hbsObject);
@@ -97,35 +108,36 @@ module.exports = function(app) {
         catarray.push(bod);
       }
 
-      const hbsObject = {
-        categories: catarray,
-        userEmail: _req.user.email,
-      };
+        const hbsObject = {
+          categories: catarray,
+          userEmail: _req.user.email
+        };
 
       res.render("forum", hbsObject);
     });
   });
 
-  app.get("/category", isAuthenticated, (_req, res) => {
-    db.Category.findAll({}).then(function(dbCategory) {
-      const catarray = [];
-      for (let i = 0; i < dbCategory.length; i++) {
-        const cat = dbCategory[i];
-        const bod = cat.dataValues;
-        catarray.push(bod);
-      }
+  app.get('/category', isAuthenticated, (_req, res) => {
+    db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
 
-      const hbsObject = {
-        categories: catarray,
-        userEmail: _req.user.email,
-      };
+        const hbsObject = {
+          categories: catarray,
+          userEmail: _req.user.email
+        };
 
-      res.render("category", hbsObject);
-    });
+        res.render('category', hbsObject);
+      });
   });
 
-  app.get("/about", isAuthenticated, (_req, res) => {
-    res.render("about", _req.user);
+  app.get('/about', isAuthenticated, (_req, res) => {
+    res.render('about', _req.user);
   });
   app.get("/home", isAuthenticated, (_req, res) => {
     res.render("index", _req);
@@ -139,6 +151,17 @@ module.exports = function(app) {
       res.render("posts", hsbsObject);
     } else {
       res.sendFile(path.join(__dirname, "../../public/login.html"));
+    }
+  });
+
+  app.get('/posts', isAuthenticated, (req, res) => {
+    if (req.user) {
+      const hsbsObject = {
+        userEmail: req.user.email
+      };
+      res.render('posts', hsbsObject);
+    } else {
+      res.sendFile(path.join(__dirname, '../../public/login.html'));
     }
   });
 };
