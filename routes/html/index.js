@@ -51,6 +51,7 @@ module.exports = function (app) {
           hbsObj = {
             body: element.dataValues.body,
             bodyCreatedAt: element.dataValues.createdAt,
+            postId: element.dataValues.id, // for deletion
             name: element.Category.dataValues.name,
             email: element.User.dataValues.email
           };
