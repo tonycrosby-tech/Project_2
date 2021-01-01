@@ -14,8 +14,7 @@
                 <td class="alt1" colspan="6">
                     <center>
                         WhatChaMaCallIt is a brand new forum! :)
-                        {{#each alltables}}
-                        {{#each categories}}
+                        {{!-- {{#each categories}}
                         {{> members/categories-block}}
                         {{/each}}
 
@@ -25,9 +24,8 @@
 
                         {{#each users}}
                         {{> members/users-block}}
-                        {{/each}}
+                        {{/each}} --}}
 
-                        {{/each}}
 
 
                         <br><br>Threads:
@@ -101,7 +99,6 @@
                     <div id="newest-posts">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
-                                {{#each alltables}}
 
                                 <tr>
                                     <td style="padding:1px" class="smallfont">1&nbsp;<a href="#"
@@ -120,7 +117,6 @@
                                     </td>
                                 </tr>
 
-                                {{/each}}
                             </tbody>
                         </table>
                     </div>
