@@ -14,14 +14,28 @@
                 <td class="alt1" colspan="6">
                     <center>
                         WhatChaMaCallIt is a brand new forum! :)
-                        <br><br>Threads: 6{{#each categories}}{{> members/categories-block}}
+                        {{!-- {{#each categories}}
+                        {{> members/categories-block}}
                         {{/each}}
                         Posts: 0{{#each posts}}
                         {{> members/posts-block}}
                         {{/each}}
                         Members: 0{{#each users}}
                         {{> members/users-block}}
-                        {{/each}}
+                        {{/each}} --}}
+
+
+
+                        {{!-- <br><br>Threads:
+
+
+                        ,
+                        Posts:
+
+                        , Members: --}}
+
+
+
                         <br><br>
                         If you have a complaint, feedback, or an issue, then please contact us on github by clicking
                         this
@@ -83,26 +97,61 @@
                     <div id="newest-posts">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
-                                {{#each alltables}}
-                                    {{#each categories}}
-                                        <tr>
-                                            <td style="padding:1px" class="smallfont">1&nbsp;<a href="#"
-                                                    title="Post title goes here">{{ posts.title }}</a></td>
-                                            <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
-                                                    title="username"><b>
-                                                        <font color="#2F4F4F"> {{ userEmail }} </font>
-                                                    </b></a>&nbsp;&nbsp;
-                                                <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                                    title="Jump to first unread post in thread">►</a>
-                                            </td>
-                                            <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
-                                                title="Date/Time">{{ posts.createdAt }}</td>
-                                            <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
-                                                    title="Category goes here">{{ categories }}</a>
-                                            </td>
-                                        </tr>
-                                    {{/each}}
+
+
+                                {{#each postinfo}}
+                                <tr>
+                                    <td>
+                                        {{body}}
+                                    </td>
+
+                                     <td>
+                                        {{email}}
+                                    </td>
+
+                                     <td>
+                                        {{bodyCreatedAt}}
+                                    </td>
+
+                                     <td>
+                                        {{name}}
+                                    </td>
+                                </tr>
                                 {{/each}}
+
+                                {{!-- <tr>
+                                    <td style="padding:1px" class="smallfont">
+                                        <a href="#"
+                                            title="Post title goes here">
+                                            {{#each posts}}
+                                            {{> members/posts-block }}
+                                            {{/each}}
+                                            </a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap">
+                                        <a href="#"
+                                          title="username"> --}}
+                                            {{!-- <b> --}}
+                                                {{!-- <font color="#2F4F4F">  --}}
+                                                    {{!-- {{#each users}}{{> members/users-block}}{{/each}}  --}}
+                                                {{!-- </font> --}}
+                                            {{!-- </b> --}}
+                                        {{!-- </a> --}}
+                                        {{!-- &nbsp;&nbsp; --}}
+                                         {{!-- <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a>  --}}
+                                    {{!-- </td>
+                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                        title="Date/Time">
+                                        {{#each posts}}{{> members/posts-block-date }}
+                                        {{/each}}
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                            title="Category goes here">{{#each categories}}{{> members/categories-block }}{{/each}}</a>
+                                    </td>
+
+                                </tr> --}}
+
                             </tbody>
                         </table>
                     </div>
