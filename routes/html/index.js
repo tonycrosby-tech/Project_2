@@ -38,51 +38,34 @@ module.exports = function (app) {
   app.get('/members', isAuthenticated, (_req, res) => {
     // const userEmail = _req.user.email;
 
-    // the following code is untested!!!  I don't know that dbPost will automatically
-    // reduce itself to posts, categories, users.
     db.Post.findAll({
       include: [db.User, db.Comments, db.Category],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     })
       .then(function (dbPost) {
-        // const thebod = dbPost.body.Category;
-        // const test2 = dbPost.Category.body;
-        // const { Category, User, Comments } = dbPost;
-        const postarray = [];
-        const catarray = [];
-        const commentarray = [];
-        const userarray = [];
+        const alltabs = [];
         let hbsObj = {};
 
         dbPost.forEach((element) => {
-          postarray.push(element.dataValues);
-          catarray.push(element.Category.dataValues);
-          const { password, ...rest } = element.User.dataValues;
-          userarray.push(rest);
-          commentarray.push(element.Comments.dataValues);
-
           hbsObj = {
-            categories: catarray,
-            posts: postarray,
-            comments: commentarray,
-            users: userarray,
-            userEmail: _req.user.email
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            email: element.User.dataValues.email
           };
 
-          // arrayall.push(hbsObj);
-          // hbsObj = {};
+          alltabs.push(hbsObj);
+          hbsObj = {};
         });
 
-        // const hbsObject = {
-        //   alltables: arrayall,
-        //   userEmail: _req.user.email
-        // };
+        const sendObject = {
+          postinfo: alltabs,
+          userEmail: _req.user.email
+        };
 
-        res.render('members', hbsObj);
+        res.render('members', sendObject);
       });
-
-    // res.render('members', { userEmail });
   });
 
   app.get('/help', isAuthenticated, (_req, res) => {
