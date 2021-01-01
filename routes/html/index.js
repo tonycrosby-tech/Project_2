@@ -52,7 +52,8 @@ module.exports = function (app) {
             body: element.dataValues.body,
             bodyCreatedAt: element.dataValues.createdAt,
             name: element.Category.dataValues.name,
-            email: element.User.dataValues.email
+            email: element.User.dataValues.email,
+            bodyUpdatedAt: element.dataValues.updatedAt
           };
 
           alltabs.push(hbsObj);

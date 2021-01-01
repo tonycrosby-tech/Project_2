@@ -11,7 +11,7 @@
             <select id='myCategories'>
                 <option value="" disabled selected>Categories</option>
                 {{#each categories}}
-                <option value = "{{@index}}"> {{ this.name }} </option>
+                {{> categories/categories-block}}
                 {{/each}}
                 {{!-- <option value="1">Sports</option>
                 <option value="2">Movies</option>
@@ -25,7 +25,6 @@
             </div>
         </form>
         <button class="btn waves-effect waves-light blue darken-4 create-category" id="side-search">Create</button>
-        <button class="btn waves-effect waves-light blue darken-4 filter-search" id="side-search">Search post</button>
     </div>
 
 </div>

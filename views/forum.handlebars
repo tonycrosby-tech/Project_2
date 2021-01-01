@@ -14,15 +14,6 @@
                 <td class="alt1" colspan="6">
                     <center>
                         WhatChaMaCallIt is a brand new forum! :)
-                        <br><br>Threads: 6
-                        {{!-- {{#each categories}}{{> members/categories-block}}
-                        {{/each}} --}}
-                        Posts: 0{{#each posts}}
-                        {{> members/posts-block}}
-                        {{/each}}
-                        Members: 0{{#each users}}
-                        {{> members/users-block}}
-                        {{/each}}
                         <br><br>
                         If you have a complaint, feedback, or an issue, then please contact us on github by clicking
                         this
@@ -62,7 +53,7 @@
                     <div>
                         <a href="/forum/category/sports"><strong>Sports</strong></a>
                         <div class="smallfont">
-                            <span style="cursor:pointer">created by: Admin</span>
+                            <span class='hidden' style="cursor:pointer">created by: {{email}}</span>
                         </div>
                     </div>
                 </td>
@@ -70,15 +61,14 @@
                     <div class="smallfont" align="left">
                         <div>
                             <span style="white-space:nowrap">
-                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>Title goes
-                                        here</strong></a>
+                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>{{body}}</strong></a>
                             </span>
                         </div>
                         <div style="white-space:nowrap">
-                            by: <a href="#" rel="nofollow">username/email</a>
+                        <p class='hidden'>by:</p><a href="#" rel="nofollow">{{email}}</a>
                         </div>
                         <div align="left" style="white-space:nowrap">
-                            Date /<span class="time"> Time</span>
+                            {{bodyUpdatedAt}}</span>
                         </div>
                     </div>
                 </td>
@@ -93,7 +83,7 @@
                     <div>
                         <a href="/forum/category/movies"><strong>Movies</strong></a>
                         <div class="smallfont">
-                            <span style="cursor:pointer">created by: Admin</span>
+                            <span class='hidden' style="cursor:pointer">created by: {{email}}</span>
                         </div>
                     </div>
                 </td>
@@ -101,15 +91,14 @@
                     <div class="smallfont" align="left">
                         <div>
                             <span style="white-space:nowrap">
-                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>Title goes
-                                        here</strong></a>
+                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>{{body}}</strong></a>
                             </span>
                         </div>
                         <div style="white-space:nowrap">
-                            by: <a href="#" rel="nofollow">username/email</a>
+                        <p class='hidden'>by:</p><a href="#" rel="nofollow">{{email}}</a>
                         </div>
                         <div align="left" style="white-space:nowrap">
-                            Date /<span class="time"> Time</span>
+                            {{bodyUpdatedAt}}
                         </div>
                     </div>
                 </td>
@@ -123,7 +112,7 @@
                     <div>
                         <a href="/forum/category/books"><strong>Books</strong></a>
                         <div class="smallfont">
-                            <span style="cursor:pointer">created by: Admin</span>
+                            <span class='hidden' style="cursor:pointer">created by: {{email}}</span>
                         </div>
                     </div>
                 </td>
@@ -131,15 +120,14 @@
                     <div class="smallfont" align="left">
                         <div>
                             <span style="white-space:nowrap">
-                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>Title goes
-                                        here</strong></a>
+                                <a href="#" style="white-space:nowrap" title="Insert Title Here"><strong>{{body}}</strong></a>
                             </span>
                         </div>
                         <div style="white-space:nowrap">
-                            by: <a href="#" rel="nofollow">username/email</a>
+                        <p class='hidden'>by:</p><a href="#" rel="nofollow">{{email}}</a>
                         </div>
                         <div align="left" style="white-space:nowrap">
-                            Date /<span class="time"> Time</span>
+                            {{bodyUpdatedAt}}
                         </div>
                     </div>
                 </td>
