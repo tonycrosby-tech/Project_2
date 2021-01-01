@@ -26,7 +26,7 @@
 
 
 
-                        {{!-- <br><br>Threads:
+                        {{!-- <br><br>categories:
 
 
                         ,
@@ -57,7 +57,7 @@
         </thead>
         <tbody>
             <tr valign="top">
-                <td class="thead" align="left" width="25%"> <span id="hottest-threads">Hottest Threads (in last 7
+                <td class="thead" align="left" width="25%"> <span id="hottest-categories">Hottest Category (in last 7
                         days)</span> </td>
                 <td class="thead" align="left" width="50%"> <span id="latest-posts">Latest Posts</span> </td>
             </tr>
@@ -140,7 +140,7 @@
                                         </a>
                                         &nbsp;&nbsp;
                                          <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in thread">►</a> 
+                                            title="Jump to first unread post in categorie">►</a> 
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
                                         title="Date/Time">
@@ -192,44 +192,4 @@
             </tbody>
         </table>
     </div>
-
-    <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
-        <thead>
-            <tr>
-                <td class="tcat" colspan="6">
-                    <span class="smallfont"><strong>» Recent Threads</strong></span>
-                </td>
-            </tr>
-        </thead>
-        <tbody id="recent-threads" style="">
-            <tr>
-                <td class="thead" width="50%">Thread / Thread Starter</td>
-                <td align="center" class="thead" style="white-space: nowrap" width="25%">Last Post</td>
-                <td class="thead" width="2%">Replies</td>
-                <td class="thead" width="2%">Views</td>
-                <td align="center" class="thead" width="20%">Forum</td>
-            </tr>
-            <tr>
-                <td class="alt1">
-                    <a href="#"></a>
-                    <a href="#" title="Hi there. "><strong>{{body}}</strong></a>
-                    <div class="smallfont">
-                        <span style="cursor:pointer">
-                            {{!-- onclick="window.open('our members profile link if he/she has one')"> --}}
-                            {{email}}</span>
-                    </div>
-                    <div class="smallfont">{{bodyCreatedAt}} <span class="time"></span></div>
-                </td>
-                <td class="alt2">
-                    <div class="smallfont" style="text-align:right; white-space:nowrap">
-                        {{bodyUpdatedAt}}<span class="time"></span><br>
-                        <p class='hidden'>by</p> <a href="#" rel="nofollow">{{email}}</a> <a href="#"></a>
-                    </div>
-                </td>
-                <td align="center" class="alt1"><span class="smallfont hidden">0</span></td>
-                <td align="center" class="alt2"><span class="smallfont hidden">0</span></td>
-                <td class="alt1"><span class="smallfont"><a href="#">{{name}}</a></span></td>
-            </tr>
-        </tbody>
-    </table>
 </div>
