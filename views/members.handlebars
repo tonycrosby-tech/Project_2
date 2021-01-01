@@ -17,12 +17,10 @@
                         {{!-- {{#each categories}}
                         {{> members/categories-block}}
                         {{/each}}
-
-                        {{#each posts}}
+                        Posts: 0{{#each posts}}
                         {{> members/posts-block}}
                         {{/each}}
-
-                        {{#each users}}
+                        Members: 0{{#each users}}
                         {{> members/users-block}}
                         {{/each}} --}}
 
@@ -71,24 +69,24 @@
                                 <tr>
                                     <td height="15px" width="1%" align="center"><span class="smallfont">1&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="#"
+                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/sports"
                                             title="Name of category goes here">Sports</a></td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
                                 </tr>
                                 <tr>
                                     <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="#"
+                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/movies"
                                             title="Name of category goes here">Movies</a></td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
                                 </tr>
                                 <tr>
                                     <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="#"
-                                            title="Name of category goes here">Food</a>
+                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
+                                            title="Name of category goes here">Books</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -101,8 +99,8 @@
                             <tbody>
 
 
-                                {{#each postinfo}}
-                                <tr>
+                                {{!-- {{#each postinfo}} --}}
+                                {{!-- <tr>
                                     <td>
                                         {{body}}
                                     </td>
@@ -118,41 +116,42 @@
                                      <td>
                                         {{name}}
                                     </td>
-                                </tr>
-                                {{/each}}
-
-                                {{!-- <tr>
+                                </tr> --}}
+                                {{!-- {{/each}} --}}
+                                {{#each postinfo}}
+                                <tr>
                                     <td style="padding:1px" class="smallfont">
                                         <a href="#"
                                             title="Post title goes here">
-                                            {{#each posts}}
+                                            {{!-- {{#each posts}}
                                             {{> members/posts-block }}
-                                            {{/each}}
+                                            {{/each}} --}}
+                                            {{body}}
                                             </a>
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap">
                                         <a href="#"
-                                          title="username"> --}}
-                                            {{!-- <b> --}}
-                                                {{!-- <font color="#2F4F4F">  --}}
-                                                    {{!-- {{#each users}}{{> members/users-block}}{{/each}}  --}}
-                                                {{!-- </font> --}}
-                                            {{!-- </b> --}}
-                                        {{!-- </a> --}}
-                                        {{!-- &nbsp;&nbsp; --}}
-                                         {{!-- <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in thread">►</a>  --}}
-                                    {{!-- </td>
+                                          title="username">
+                                            <b>
+                                                <font color="#2F4F4F"> 
+                                                    {{email}} 
+                                                </font>
+                                            </b>
+                                        </a>
+                                        &nbsp;&nbsp;
+                                         <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in thread">►</a> 
+                                    </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
                                         title="Date/Time">
-                                        {{#each posts}}{{> members/posts-block-date }}
-                                        {{/each}}
+                                        {{bodyCreatedAt}}
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
-                                            title="Category goes here">{{#each categories}}{{> members/categories-block }}{{/each}}</a>
+                                            title="Category goes here">{{name}}</a>
                                     </td>
 
-                                </tr> --}}
+                                </tr>
+                                {{/each}}
 
                             </tbody>
                         </table>
@@ -213,23 +212,23 @@
             <tr>
                 <td class="alt1">
                     <a href="#"></a>
-                    <a href="#" title="Hi there. "><strong>Topic/Post Title</strong></a>
+                    <a href="#" title="Hi there. "><strong>{{body}}</strong></a>
                     <div class="smallfont">
                         <span style="cursor:pointer">
                             {{!-- onclick="window.open('our members profile link if he/she has one')"> --}}
-                            username</span>
+                            {{email}}</span>
                     </div>
-                    <div class="smallfont">Day, Month Year <span class="time">24HR/TIME</span></div>
+                    <div class="smallfont">{{bodyCreatedAt}} <span class="time"></span></div>
                 </td>
                 <td class="alt2">
                     <div class="smallfont" style="text-align:right; white-space:nowrap">
-                        Today <span class="time">00:00 PM</span><br>
-                        by <a href="#" rel="nofollow">username</a> <a href="#"></a>
+                        {{bodyUpdatedAt}}<span class="time"></span><br>
+                        <p class='hidden'>by</p> <a href="#" rel="nofollow">{{email}}</a> <a href="#"></a>
                     </div>
                 </td>
-                <td align="center" class="alt1"><span class="smallfont">0</span></td>
-                <td align="center" class="alt2"><span class="smallfont">0</span></td>
-                <td class="alt1"><span class="smallfont"><a href="#">Category goes here</a></span></td>
+                <td align="center" class="alt1"><span class="smallfont hidden">0</span></td>
+                <td align="center" class="alt2"><span class="smallfont hidden">0</span></td>
+                <td class="alt1"><span class="smallfont"><a href="#">{{name}}</a></span></td>
             </tr>
         </tbody>
     </table>

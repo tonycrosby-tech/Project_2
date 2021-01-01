@@ -52,7 +52,8 @@ module.exports = function (app) {
             body: element.dataValues.body,
             bodyCreatedAt: element.dataValues.createdAt,
             name: element.Category.dataValues.name,
-            email: element.User.dataValues.email
+            email: element.User.dataValues.email,
+            bodyUpdatedAt: element.dataValues.updatedAt
           };
 
           alltabs.push(hbsObj);
@@ -91,7 +92,7 @@ module.exports = function (app) {
       });
   });
 
-  app.get('/category', isAuthenticated, (_req, res) => {
+  app.get('/forum/category', isAuthenticated, (_req, res) => {
     const catgoriesGot = privateHelperGetCats(_req);
     // db.Category.findAll({})
     //   .then(function (dbCategory) {
@@ -120,7 +121,7 @@ module.exports = function (app) {
     res.render('index', _req);
   });
 
-  app.get('/posts', isAuthenticated, (req, res) => {
+  app.get('/forum/posts', isAuthenticated, (req, res) => {
     if (req.user) {
       const categoriesReceived = privateHelperGetCats();
       const hsbsObject = {
@@ -152,4 +153,13 @@ module.exports = function (app) {
         return hbsObject;
       });
   };
+  app.get('/forum/category/Sports', isAuthenticated, (_req, res) => {
+    res.render('sports', _req.user);
+  });
+  app.get('/forum/category/Movies', isAuthenticated, (_req, res) => {
+    res.render('movies', _req.user);
+  });
+  app.get('/forum/category/Books', isAuthenticated, (_req, res) => {
+    res.render('books', _req.user);
+  });
 };
