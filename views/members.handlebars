@@ -14,32 +14,14 @@
                 <td class="alt1" colspan="6">
                     <center>
                         WhatChaMaCallIt is a brand new forum! :)
-                        {{#each alltables}}
-                        {{#each categories}}
-                        {{> members/categories-block}}
+                        <br><br>Threads: 6{{#each categories}}{{> members/categories-block}}
                         {{/each}}
-
-                        {{#each posts}}
+                        Posts: 0{{#each posts}}
                         {{> members/posts-block}}
                         {{/each}}
-
-                        {{#each users}}
+                        Members: 0{{#each users}}
                         {{> members/users-block}}
                         {{/each}}
-
-                        {{/each}}
-
-
-                        <br><br>Threads:
-
-
-                        ,
-                        Posts:
-
-                        , Members:
-
-
-
                         <br><br>
                         If you have a complaint, feedback, or an issue, then please contact us on github by clicking
                         this
@@ -88,7 +70,7 @@
                                     <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="#"
-                                            title="Name of category goes here">Food</a>
+                                            title="Name of category goes here">Books</a>
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>

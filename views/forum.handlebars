@@ -14,20 +14,15 @@
                 <td class="alt1" colspan="6">
                     <center>
                         WhatChaMaCallIt is a brand new forum! :)
-                        <br><br>Threads: {{#each categories}}
-                        {{> members/categories-block}}
-                        {{/each}}
-
-                        ,
-                        Posts:
-                        {{#each posts}}
+                        <br><br>Threads: 6
+                        {{!-- {{#each categories}}{{> members/categories-block}}
+                        {{/each}} --}}
+                        Posts: 0{{#each posts}}
                         {{> members/posts-block}}
                         {{/each}}
-
-                        , Members: {{#each users}}
+                        Members: 0{{#each users}}
                         {{> members/users-block}}
                         {{/each}}
-
                         <br><br>
                         If you have a complaint, feedback, or an issue, then please contact us on github by clicking
                         this
@@ -65,7 +60,7 @@
                 <td class="alt2"></td>
                 <td class="alt1Active" align="left" id="f87">
                     <div>
-                        <a href="#"><strong>Sports</strong></a>
+                        <a href="/forum/category/sports"><strong>Sports</strong></a>
                         <div class="smallfont">
                             <span style="cursor:pointer">created by: Admin</span>
                         </div>
@@ -87,7 +82,7 @@
                         </div>
                     </div>
                 </td>
-                <td alt="Thread Count" class="alt1">0</td>
+                <td alt="Thread Count" class="alt1">1</td>
                 <td alt="Post Count" class="alt2">0</td>
                 <td alt="View Count" class="alt1">0</td>
             </tr>
@@ -96,7 +91,7 @@
                 <td class="alt2"></td>
                 <td class="alt1Active" align="left" id="f87">
                     <div>
-                        <a href="#"><strong>Movies</strong></a>
+                        <a href="/forum/category/movies"><strong>Movies</strong></a>
                         <div class="smallfont">
                             <span style="cursor:pointer">created by: Admin</span>
                         </div>
@@ -118,7 +113,7 @@
                         </div>
                     </div>
                 </td>
-                <td alt="Thread Count" class="alt1">0</td>
+                <td alt="Thread Count" class="alt1">1</td>
                 <td alt="Post Count" class="alt2">0</td>
                 <td alt="View Count" class="alt1">0</td>
             </tr>
@@ -126,7 +121,7 @@
                 <td class="alt2"></td>
                 <td class="alt1Active" align="left" id="f87">
                     <div>
-                        <a href="#"><strong>Food</strong></a>
+                        <a href="/forum/category/books"><strong>Books</strong></a>
                         <div class="smallfont">
                             <span style="cursor:pointer">created by: Admin</span>
                         </div>
@@ -148,7 +143,7 @@
                         </div>
                     </div>
                 </td>
-                <td alt="Thread Count" class="alt1">0</td>
+                <td alt="Thread Count" class="alt1">1</td>
                 <td alt="Post Count" class="alt2">0</td>
                 <td alt="View Count" class="alt1">0</td>
             </tr>
@@ -161,11 +156,11 @@
 
 <div class="container">
     <div class="category-content">
-        <a href="/category"><button style="width: 50%;" class='category-button' id='new-category'><i
+        <a href="/forum/category"><button style="width: 50%;" class='category-button' id='new-category'><i
                     class='material-icons'>add</i>Create
                 New
                 Category</button></a>
-        <a href="/posts"><button style="width: 50%;" class='category-button' id='new-post'><i
+        <a href="/forum/posts"><button style="width: 50%;" class='category-button' id='new-post'><i
                     class='material-icons'>add</i>Create New
                 Post</button></a>
     </div>
