@@ -53,7 +53,6 @@ module.exports = function (app) {
         const catarray = [];
         const commentarray = [];
         const userarray = [];
-        const arrayall = [];
         let hbsObj = {};
 
         dbPost.forEach((element) => {
