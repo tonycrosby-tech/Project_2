@@ -342,4 +342,36 @@ module.exports = function (app) {
       res.render('single-post', hbsObj);
     });
   });
+  app.get('/forum/posts-boilerplate', isAuthenticated, (_req, res) => {
+    db.Post.findAll({
+      include: [db.User, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
+
+      dbPost.forEach((element) => {
+        if (element.Category.dataValues.name === 'Other') {
+          hbsObj = {
+            title: element.dataValues.title,
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            bodyUpdatedAt: element.dataValues.updatedAt,
+            userEmail: element.User.dataValues.email,
+          };
+
+          alltabs.push(hbsObj);
+        }
+      });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+
+      res.render('posts-boilerplate', sendObject);
+    });
+  })
 };
