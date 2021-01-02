@@ -1,10 +1,10 @@
-module.exports = function(sequelize, DataTypes) {
-  const Comments = sequelize.define("Comments", {
+module.exports = function (sequelize, DataTypes) {
+  const Comments = sequelize.define('Comments', {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: { len: [1] },
-    },
+      validate: { len: [1] }
+    }
   });
 
   //   Comments.associate = function (models) {
