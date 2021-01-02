@@ -30,10 +30,11 @@ module.exports = function (app) {
       CategoryId: intcat
     };
 
-    db.Post.create(createpost)
-      .then(function (dbPost) {
-        res.json(dbPost);
-      });
+    console.log(createpost);
+
+    db.Post.create(createpost).then(function (dbPost) {
+      res.json(dbPost);
+    });
   });
 
   app.delete('/api/posts/:id', isAuthenticated, (req, res) => {

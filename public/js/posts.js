@@ -5,7 +5,7 @@ $(document).ready(() => {
   const titlePost = $('#titlePost');
   const postCategory = $('#myCategories');
 
-  createPost.on('click', event => {
+  createPost.on('click', (event) => {
     event.preventDefault();
 
     const selectedCat = postCategory.val();
@@ -15,7 +15,13 @@ $(document).ready(() => {
       body: usersPosting.val().trim()
     };
 
-    if (sendPostToServer.CategoryId === null || !sendPostToServer.title || !sendPostToServer.body) {
+    console.log(sendPostToServer);
+
+    if (
+      sendPostToServer.CategoryId === null ||
+      !sendPostToServer.title ||
+      !sendPostToServer.body
+    ) {
       return;
     }
     // /api/posts
@@ -24,7 +30,7 @@ $(document).ready(() => {
         window.location.replace('/members');
         // If there's an error, log the error
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   });

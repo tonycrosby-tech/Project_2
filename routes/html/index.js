@@ -39,7 +39,7 @@ module.exports = function (app) {
     // const userEmail = _req.user.email;
 
     db.Post.findAll({
-      include: [db.User, db.Comments, db.Category],
+      include: [db.User, db.Category],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -48,16 +48,15 @@ module.exports = function (app) {
 
       dbPost.forEach((element) => {
         hbsObj = {
-          body: element.dataValues.body,
           title: element.dataValues.title,
+          body: element.dataValues.body,
           bodyCreatedAt: element.dataValues.createdAt,
           name: element.Category.dataValues.name,
-          email: element.User.dataValues.email,
-          bodyUpdatedAt: element.dataValues.updatedAt
+          bodyUpdatedAt: element.dataValues.updatedAt,
+          categories: element.dataValues.name
         };
 
         alltabs.push(hbsObj);
-        hbsObj = {};
       });
 
       const sendObject = {
@@ -91,26 +90,26 @@ module.exports = function (app) {
     });
   });
 
-  // app.get('/forum/category', isAuthenticated, (_req, res) => {
+  // app.get("/forum/category", isAuthenticated, (_req, res) => {
   //   const catgoriesGot = privateHelperGetCats(_req);
-  //   db.Category.findAll({})
-  //     .then(function (dbCategory) {
-  //       const catarray = [];
-  //       for (let i = 0; i < dbCategory.length; i++) {
-  //         const cat = dbCategory[i];
-  //         const bod = cat.dataValues;
-  //         catarray.push(bod);
-  //       }
+  //   // db.Category.findAll({})
+  //   //   .then(function (dbCategory) {
+  //   //     const catarray = [];
+  //   //     for (let i = 0; i < dbCategory.length; i++) {
+  //   //       const cat = dbCategory[i];
+  //   //       const bod = cat.dataValues;
+  //   //       catarray.push(bod);
+  //   //     }
 
-  //       const hbsObject = {
-  //         categories: catarray,
-  //         userEmail: _req.user.email
-  //       };
+  //   //     const hbsObject = {
+  //   //       categories: catarray,
+  //   //       userEmail: _req.user.email
+  //   //     };
 
-  //       res.render('category', catgoriesGot);
-  //     });
+  //   //     res.render('category', catgoriesGot);
+  //   //   });
 
-  //   res.render('category', catgoriesGot);
+  //   res.render("category", catgoriesGot);
   // });
 
   app.get('/about', isAuthenticated, (_req, res) => {
@@ -134,39 +133,139 @@ module.exports = function (app) {
           categories: catarray,
           userEmail: req.user.email
         };
+
+        console.log(hbsObject);
+
         res.render('posts', hbsObject);
       });
+    } else {
+      res.sendFile(path.join(__dirname, '../../public/login.html'));
     }
   });
 
-  // const privateHelperGetCats = (__, _req) => {
-  //   db.Category.findAll({})
-  //     .then(function (dbCategory) {
-  //       const catarray = [];
-  //       for (let i = 0; i < dbCategory.length; i++) {
-  //         const cat = dbCategory[i];
-  //         const bod = cat.dataValues;
-  //         catarray.push(bod);
-  //       }
-
-  //       const hbsObject = {
-  //         categories: catarray
-  //         // userEmail: _req.user.email
-  //       };
-
-  //       return hbsObject;
-  //     });
-  // };
   app.get('/forum/category/Sports', isAuthenticated, (_req, res) => {
-    res.render('sports', _req.user);
+    db.Post.findAll({
+      include: [db.User, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
+
+      dbPost.forEach((element) => {
+        if (element.Category.dataValues.name === 'Sports') {
+          hbsObj = {
+            title: element.dataValues.title,
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            bodyUpdatedAt: element.dataValues.updatedAt,
+            userEmail: element.User.dataValues.email
+          };
+
+          alltabs.push(hbsObj);
+        }
+      });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+      res.render('sports', sendObject);
+    });
   });
   app.get('/forum/category/Movies', isAuthenticated, (_req, res) => {
-    res.render('movies', _req.user);
+    db.Post.findAll({
+      include: [db.User, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
+
+      dbPost.forEach((element) => {
+        if (element.Category.dataValues.name === 'Movies') {
+          hbsObj = {
+            title: element.dataValues.title,
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            bodyUpdatedAt: element.dataValues.updatedAt,
+            userEmail: element.User.dataValues.email
+          };
+
+          alltabs.push(hbsObj);
+        }
+      });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+      res.render('movies', sendObject);
+    });
   });
   app.get('/forum/category/Books', isAuthenticated, (_req, res) => {
-    res.render('books', _req.user);
+    db.Post.findAll({
+      include: [db.User, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
+
+      dbPost.forEach((element) => {
+        if (element.Category.dataValues.name === 'Books') {
+          hbsObj = {
+            title: element.dataValues.title,
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            bodyUpdatedAt: element.dataValues.updatedAt,
+            userEmail: element.User.dataValues.email
+          };
+
+          alltabs.push(hbsObj);
+        }
+      });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+      res.render('books', sendObject);
+    });
   });
   app.get('/forum/category/other', isAuthenticated, (_req, res) => {
-    res.render('other', _req.user);
+    db.Post.findAll({
+      include: [db.User, db.Category],
+      limit: 10,
+      order: [[db.sequelize.col('updatedAt'), 'DESC']]
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
+
+      dbPost.forEach((element) => {
+        if (element.Category.dataValues.name === 'Other') {
+          hbsObj = {
+            title: element.dataValues.title,
+            body: element.dataValues.body,
+            bodyCreatedAt: element.dataValues.createdAt,
+            name: element.Category.dataValues.name,
+            bodyUpdatedAt: element.dataValues.updatedAt,
+            userEmail: element.User.dataValues.email
+          };
+
+          alltabs.push(hbsObj);
+        }
+      });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+
+      res.render('other', sendObject);
+    });
   });
 };
