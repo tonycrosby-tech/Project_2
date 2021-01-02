@@ -4,7 +4,7 @@ $(document).ready(() => {
   //   // and updates the HTML on the page
   const createPost = $('#createPost');
   const usersPosting = $('#usersPosting');
-  // const titlePost = $('#titlePost');
+  const titlePost = $('#titlePost');
   const postCategory = $('#myCategories');
 
   createPost.on('click', event => {
@@ -13,11 +13,11 @@ $(document).ready(() => {
     const selectedCat = postCategory.val();
     const sendPostToServer = {
       CategoryId: selectedCat,
-      // title: titlePost.val().trim(),
+      title: titlePost.val().trim(),
       body: usersPosting.val().trim()
     };
 
-    if (sendPostToServer.CategoryId === null || !sendPostToServer.body) {
+    if (sendPostToServer.CategoryId === null || !sendPostToServer.body || !sendPostToServer.title) {
       return;
     }
     // /api/posts
