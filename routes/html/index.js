@@ -123,19 +123,25 @@ module.exports = function (app) {
 
   app.get('/forum/posts', isAuthenticated, (req, res) => {
     if (req.user) {
-      const categoriesReceived = privateHelperGetCats();
-      const hsbsObject = {
-        categories: categoriesReceived,
-        userEmail: req.user.email
-      };
+      db.Category.findAll({})
+      .then(function (dbCategory) {
+        const catarray = [];
+        for (let i = 0; i < dbCategory.length; i++) {
+          const cat = dbCategory[i];
+          const bod = cat.dataValues;
+          catarray.push(bod);
+        }
 
-      res.render('posts', hsbsObject);
-    } else {
-      res.sendFile(path.join(__dirname, '../../public/login.html'));
+        const hbsObject = {
+          categories: catarray,
+          userEmail: req.user.email
+        };
+        res.render('posts', hbsObject);
+      })
     }
   });
 
-  const privateHelperGetCats = (_req) => {
+  const privateHelperGetCats = (__, _req) => {
     db.Category.findAll({})
       .then(function (dbCategory) {
         const catarray = [];
@@ -147,7 +153,7 @@ module.exports = function (app) {
 
         const hbsObject = {
           categories: catarray,
-          userEmail: _req.user.email
+          // userEmail: _req.user.email
         };
 
         return hbsObject;

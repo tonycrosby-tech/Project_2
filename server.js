@@ -63,12 +63,19 @@ db.sequelize.sync(SYNC_OPTIONS).then(() => {
       .catch(() => {
 
       });
-    db.Category.create({ name: 'Movies', createdAt: '2020-12-25', updatedAt: '2020-12-25' }).then(function (dbCategory) {
+    db.Category.create({ name: 'Movies', createdAt: '2020-12-25', updatedAt: '2020-12-25' })
+    .then(function (dbCategory) {
     })
       .catch(() => {
       // do nothing
       });
     db.Category.create({ name: 'Books', createdAt: '2020-12-25', updatedAt: '2020-12-25' })
+      .then(function (dbCategory) {
+      })
+      .catch(() => {
+      // do nothing
+      });
+    db.Category.create({ name: 'Other', createdAt: '2020-12-25', updatedAt: '2020-12-25' })
       .then(function (dbCategory) {
       })
       .catch(() => {
