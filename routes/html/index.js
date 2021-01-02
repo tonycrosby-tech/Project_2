@@ -51,6 +51,7 @@ module.exports = function(app) {
         hbsObj = {
           title: element.dataValues.title,
           body: element.dataValues.body,
+          title: element.dataValues.title,
           bodyCreatedAt: element.dataValues.createdAt,
           name: element.Category.dataValues.name,
           bodyUpdatedAt: element.dataValues.updatedAt,
