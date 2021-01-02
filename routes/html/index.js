@@ -42,32 +42,30 @@ module.exports = function (app) {
       include: [db.User, db.Comments, db.Category],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
-    })
-      .then(function (dbPost) {
-        const alltabs = [];
-        let hbsObj = {};
+    }).then(function (dbPost) {
+      const alltabs = [];
+      let hbsObj = {};
 
-        dbPost.forEach((element) => {
-          hbsObj = {
-            body: element.dataValues.body,
-            bodyCreatedAt: element.dataValues.createdAt,
-            postId: element.dataValues.id, // for deletion
-            name: element.Category.dataValues.name,
-            email: element.User.dataValues.email,
-            bodyUpdatedAt: element.dataValues.updatedAt
-          };
-
-          alltabs.push(hbsObj);
-          hbsObj = {};
-        });
-
-        const sendObject = {
-          postinfo: alltabs,
-          userEmail: _req.user.email
+      dbPost.forEach((element) => {
+        hbsObj = {
+          body: element.dataValues.body,
+          bodyCreatedAt: element.dataValues.createdAt,
+          name: element.Category.dataValues.name,
+          email: element.User.dataValues.email,
+          bodyUpdatedAt: element.dataValues.updatedAt
         };
 
-        res.render('members', sendObject);
+        alltabs.push(hbsObj);
+        hbsObj = {};
       });
+
+      const sendObject = {
+        postinfo: alltabs,
+        userEmail: _req.user.email
+      };
+
+      res.render('members', sendObject);
+    });
   });
 
   app.get('/help', isAuthenticated, (_req, res) => {
@@ -75,45 +73,44 @@ module.exports = function (app) {
   });
 
   app.get('/forum', isAuthenticated, (_req, res) => {
-    db.Category.findAll({})
-      .then(function (dbCategory) {
-        const catarray = [];
-        for (let i = 0; i < dbCategory.length; i++) {
-          const cat = dbCategory[i];
-          const bod = cat.dataValues;
-          catarray.push(bod);
-        }
+    db.Category.findAll({}).then(function (dbCategory) {
+      const catarray = [];
+      for (let i = 0; i < dbCategory.length; i++) {
+        const cat = dbCategory[i];
+        const bod = cat.dataValues;
+        catarray.push(bod);
+      }
 
-        const hbsObject = {
-          categories: catarray,
-          userEmail: _req.user.email
-        };
+      const hbsObject = {
+        categories: catarray,
+        userEmail: _req.user.email
+      };
 
-        res.render('forum', hbsObject);
-      });
+      res.render('forum', hbsObject);
+    });
   });
 
-  app.get('/forum/category', isAuthenticated, (_req, res) => {
-    const catgoriesGot = privateHelperGetCats(_req);
-    // db.Category.findAll({})
-    //   .then(function (dbCategory) {
-    //     const catarray = [];
-    //     for (let i = 0; i < dbCategory.length; i++) {
-    //       const cat = dbCategory[i];
-    //       const bod = cat.dataValues;
-    //       catarray.push(bod);
-    //     }
+  // app.get('/forum/category', isAuthenticated, (_req, res) => {
+  //   const catgoriesGot = privateHelperGetCats(_req);
+  //   db.Category.findAll({})
+  //     .then(function (dbCategory) {
+  //       const catarray = [];
+  //       for (let i = 0; i < dbCategory.length; i++) {
+  //         const cat = dbCategory[i];
+  //         const bod = cat.dataValues;
+  //         catarray.push(bod);
+  //       }
 
-    //     const hbsObject = {
-    //       categories: catarray,
-    //       userEmail: _req.user.email
-    //     };
+  //       const hbsObject = {
+  //         categories: catarray,
+  //         userEmail: _req.user.email
+  //       };
 
-    //     res.render('category', catgoriesGot);
-    //   });
+  //       res.render('category', catgoriesGot);
+  //     });
 
-    res.render('category', catgoriesGot);
-  });
+  //   res.render('category', catgoriesGot);
+  // });
 
   app.get('/about', isAuthenticated, (_req, res) => {
     res.render('about', _req.user);
@@ -124,21 +121,7 @@ module.exports = function (app) {
 
   app.get('/forum/posts', isAuthenticated, (req, res) => {
     if (req.user) {
-      const categoriesReceived = privateHelperGetCats();
-      const hsbsObject = {
-        categories: categoriesReceived,
-        userEmail: req.user.email
-      };
-
-      res.render('posts', hsbsObject);
-    } else {
-      res.sendFile(path.join(__dirname, '../../public/login.html'));
-    }
-  });
-
-  const privateHelperGetCats = (_req) => {
-    db.Category.findAll({})
-      .then(function (dbCategory) {
+      db.Category.findAll({}).then(function (dbCategory) {
         const catarray = [];
         for (let i = 0; i < dbCategory.length; i++) {
           const cat = dbCategory[i];
@@ -148,12 +131,31 @@ module.exports = function (app) {
 
         const hbsObject = {
           categories: catarray,
-          userEmail: _req.user.email
+          userEmail: req.user.email
         };
-
-        return hbsObject;
+        res.render('posts', hbsObject);
       });
-  };
+    }
+  });
+
+  // const privateHelperGetCats = (__, _req) => {
+  //   db.Category.findAll({})
+  //     .then(function (dbCategory) {
+  //       const catarray = [];
+  //       for (let i = 0; i < dbCategory.length; i++) {
+  //         const cat = dbCategory[i];
+  //         const bod = cat.dataValues;
+  //         catarray.push(bod);
+  //       }
+
+  //       const hbsObject = {
+  //         categories: catarray
+  //         // userEmail: _req.user.email
+  //       };
+
+  //       return hbsObject;
+  //     });
+  // };
   app.get('/forum/category/Sports', isAuthenticated, (_req, res) => {
     res.render('sports', _req.user);
   });

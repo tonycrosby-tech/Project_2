@@ -47,7 +47,7 @@ app.use(morgan('tiny'));
 // Requiring our routes
 require('./routes/api/category-api-routes.js')(app);
 require('./routes/api/comments-api-routes.js')(app);
-// require("./routes/api/index.js")(app);
+// require('./routes/api/index.js')(app);
 require('./routes/api/post-api-routes.js')(app);
 require('./routes/api/user-api-routes.js')(app);
 require('./routes/html/index.js')(app);
@@ -57,22 +57,39 @@ require('./routes/html/index.js')(app);
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync(SYNC_OPTIONS).then(() => {
   app.listen(PORT, () => {
-    db.Category.create({ name: 'Sports', createdAt: '2020-12-25', updatedAt: '2020-12-25' })
-      .then(function (dbCategory) {
-      })
-      .catch(() => {
-
-      });
-    db.Category.create({ name: 'Movies', createdAt: '2020-12-25', updatedAt: '2020-12-25' }).then(function (dbCategory) {
+    db.Category.create({
+      name: 'Sports',
+      createdAt: '2020-12-25',
+      updatedAt: '2020-12-25'
     })
+      .then(function (dbCategory) {})
+      .catch(() => {});
+    db.Category.create({
+      name: 'Movies',
+      createdAt: '2020-12-25',
+      updatedAt: '2020-12-25'
+    })
+      .then(function (dbCategory) {})
       .catch(() => {
-      // do nothing
+        // do nothing
       });
-    db.Category.create({ name: 'Books', createdAt: '2020-12-25', updatedAt: '2020-12-25' })
-      .then(function (dbCategory) {
-      })
+    db.Category.create({
+      name: 'Books',
+      createdAt: '2020-12-25',
+      updatedAt: '2020-12-25'
+    })
+      .then(function (dbCategory) {})
       .catch(() => {
-      // do nothing
+        // do nothing
+      });
+    db.Category.create({
+      name: 'Other',
+      createdAt: '2020-12-25',
+      updatedAt: '2020-12-25'
+    })
+      .then(function (dbCategory) {})
+      .catch(() => {
+        // do nothing
       });
 
     console.log(
