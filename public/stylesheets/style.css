@@ -4,7 +4,8 @@ form.login {
 }
 
 body {
-  background: #f0f1f3;
+  background-image: url('/images/funky-lines.png');
+
   color: #26353f;
   font: 16px verdana, sans-serif;
   margin-top: 0;
@@ -164,5 +165,5 @@ main {
 }
 
 .hidden {
-    display:none;
+  display: none;
 }
