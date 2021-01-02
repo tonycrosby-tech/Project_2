@@ -88,6 +88,14 @@
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
+                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont">4&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/other"
+                                            title="Name of category goes here">Other</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -119,7 +127,7 @@
                                 {{#each postinfo}}
                                 <tr>
                                     <td style="padding:1px" class="smallfont">
-                                        <a href="#"
+                                        <a href="/forum/category/{{name}}"
                                             title="Post title goes here">
                                             {{!-- {{#each posts}}
                                             {{> members/posts-block }}
@@ -137,7 +145,7 @@
                                             </b>
                                         </a>
                                         &nbsp;&nbsp;
-                                         <a href="/forum/category/{{name}}" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                         <a href="/forum/category/{{name}}" class="isDisabled" style="text-decoration:none;font-family:Arial;font-size:8px"
                                             title="Jump to first unread post in category">►</a> 
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
