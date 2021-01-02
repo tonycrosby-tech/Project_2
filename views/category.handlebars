@@ -1,0 +1,31 @@
+<div class="main container row">
+    <div id="" class="col m12">
+        <h3 class='center'>Welcome <b style="color: red;"> {{ userEmail }} </b></h3>
+        <br>
+        <br>
+        <h5 class="center">Create New Category</h5>
+        <hr>
+        <br>
+        <form>
+            <h6>Available Categories:</h6>
+            <select id='myCategories'>
+                <option value="" disabled selected>Categories</option>
+                {{#each categories}}
+                {{> categories/categories-block}}
+                {{/each}}
+                {{!-- <option value="1">Sports</option>
+                <option value="2">Movies</option>
+                <option value="3">Food</option> --}}
+            </select>
+            <div class="row">
+                <div class="col s12">
+                    <label for="textarea1">Title:<textarea id="textareaCategory"
+                            class="materialize-textarea"></textarea></label>
+                </div>
+            </div>
+        </form>
+        <button class="btn waves-effect waves-light blue darken-4 create-category" id="side-search">Create</button>
+    </div>
+
+</div>
+

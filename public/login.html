@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Passport Authentication</title>
+    <title>Project 2</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script
@@ -10,22 +10,50 @@
       crossorigin="anonymous"
     ></script>
     <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link href="stylesheets/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header"></div>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <b class="brand-logo center">WhatChaMaCallIt</b>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+          ><i class="material-icons">menu</i></a
+        >
+        <ul class="left hide-on-med-and-down">
+          <li><a href="/members">Home</a></li>
+          <li><a href="/forum">Forum</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/help">Help</a></li>
+        </ul>
+
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/"> Sign Up </a></li>
+        </ul>
       </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="/members">Home</a></li>
+      <li><a href="/forum">Forum</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/help">Help</a></li>
+      <li><a href="/"> Sign Up </a></li>
+    </ul>
+
+    <br />
+
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h2>Login Form</h2>
+          <h2 class="center">Login</h2>
           <form class="login">
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
@@ -45,7 +73,9 @@
                 placeholder="Password"
               />
             </div>
-            <button type="submit" class="btn btn-default">Login</button>
+            <button type="submit" class="btn blue darken-4 btn-default">
+              Login
+            </button>
           </form>
           <br />
           <p>Or sign up <a href="/">here</a></p>
@@ -53,6 +83,68 @@
       </div>
     </div>
 
+    <div class="spacer"></div>
+
+    <footer style="background:#f0f1f3" class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5
+              style="border:solid; border-color:black; border-width: 1px"
+              class="blue darken-4 center"
+            >
+              <b>WhatChaMaCallIt</b>
+            </h5>
+            <hr />
+            <center class="black-text text-lighten-4">
+              This forum was created by Tony Crosby, Parth Patel, Logan Pippin
+              and Mario Thompson.
+            </center>
+          </div>
+          <div
+            class="col l4 offset-l2 s12"
+          >
+            <h5
+              style="border:solid; border-color:black; border-width: 1px"
+              class="blue darken-4 center"
+            >
+              <b>Links</b>
+            </h5>
+            <ul>
+              <li><a class="black-text" href="/members">Home</a></li>
+              <hr />
+              <li>
+                <a class="black-text" href="mailto:tonycrosby96@gmail.com"
+                  >Contact Us</a
+                >
+              </li>
+              <hr />
+              <li><a class="black-text" href="/help">Help</a></li>
+              <hr />
+              <li>
+                <a
+                  class="black-text"
+                  href="https://github.com/tonycrosby-tech/Project_2"
+                  >GitHub Repo</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright blue darken-4">
+        <div class="container center">
+          © 2020 Copyright
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        $(".sidenav").sidenav();
+      });
+    </script>
   </body>
 </html>
