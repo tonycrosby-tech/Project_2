@@ -25,7 +25,7 @@ module.exports = function (app) {
 
     const createpost = {
       UserId: req.user.id,
-      // title: req.body.title,
+      title: req.body.title,
       body: req.body.body,
       CategoryId: intcat
     };
