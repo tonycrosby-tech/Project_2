@@ -49,6 +49,7 @@ module.exports = function (app) {
       dbPost.forEach((element) => {
         hbsObj = {
           body: element.dataValues.body,
+          title: element.dataValues.title,
           bodyCreatedAt: element.dataValues.createdAt,
           name: element.Category.dataValues.name,
           email: element.User.dataValues.email,
