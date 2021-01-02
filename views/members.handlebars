@@ -71,14 +71,14 @@
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/sports"
                                             title="Name of category goes here">Sports</a></td>
-                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
                                 <tr>
                                     <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/movies"
                                             title="Name of category goes here">Movies</a></td>
-                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
                                 <tr>
                                     <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
@@ -86,7 +86,7 @@
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
                                             title="Name of category goes here">Books</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont hidden" align="right">0</td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -97,8 +97,6 @@
                     <div id="newest-posts">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
-
-
                                 {{!-- {{#each postinfo}} --}}
                                 {{!-- <tr>
                                     <td>
@@ -139,14 +137,14 @@
                                             </b>
                                         </a>
                                         &nbsp;&nbsp;
-                                         <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in categorie">►</a> 
+                                         <a href="/forum/category/{{name}}" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                            title="Jump to first unread post in category">►</a> 
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
                                         title="Date/Time">
                                         {{bodyCreatedAt}}
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="#"
+                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="/forum/category/{{name}}"
                                             title="Category goes here">{{name}}</a>
                                     </td>
 
