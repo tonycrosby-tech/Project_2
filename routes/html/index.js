@@ -160,7 +160,8 @@ module.exports = function (app) {
             bodyCreatedAt: element.dataValues.createdAt,
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
-            userEmail: element.User.dataValues.email
+            userEmail: element.User.dataValues.email,
+            id: element.dataValues.id
           };
 
           alltabs.push(hbsObj);
@@ -191,7 +192,8 @@ module.exports = function (app) {
             bodyCreatedAt: element.dataValues.createdAt,
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
-            userEmail: element.User.dataValues.email
+            userEmail: element.User.dataValues.email,
+            id: element.dataValues.id
           };
 
           alltabs.push(hbsObj);
@@ -222,7 +224,8 @@ module.exports = function (app) {
             bodyCreatedAt: element.dataValues.createdAt,
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
-            userEmail: element.User.dataValues.email
+            userEmail: element.User.dataValues.email,
+            id: element.dataValues.id
           };
 
           alltabs.push(hbsObj);
