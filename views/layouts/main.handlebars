@@ -49,13 +49,14 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 style='border:solid; border-color:black; border-width: 1px' class="blue darken-4 center"><b>WhatChaMaCallIt</b></h5>
+          <h5 style='border:solid; border-color:black; border-width: 1px' class="blue darken-4 center">
+            <b>WhatChaMaCallIt</b></h5>
           <hr>
           <center class="black-text text-lighten-4">This forum was created by Tony Crosby,
             Parth Patel, Logan Pippin and Mario
             Thompson.</center>
         </div>
-        <div style='border:solid; border-color:black; border-width: 1px' class="col l4 offset-l2 s12">
+        <div class="col l4 offset-l2 s12">
           <h5 style='border:solid; border-color:black; border-width: 1px' class="blue darken-4 center"><b>Links</b></h5>
           <ul>
             <li><a class="black-text" href="/members">Home</a></li>
@@ -86,6 +87,10 @@
     $(document).ready(function () {
       $('select').formSelect();
     });
+
+    Handlebars.registerHelper('get_length', function (obj) {
+      return obj.length;
+    });  
   </script>
 </body>
 
