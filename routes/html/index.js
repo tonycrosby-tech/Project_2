@@ -53,7 +53,8 @@ module.exports = function (app) {
           bodyCreatedAt: element.dataValues.createdAt,
           name: element.Category.dataValues.name,
           bodyUpdatedAt: element.dataValues.updatedAt,
-          categories: element.dataValues.name
+          categories: element.dataValues.name,
+          id: element.dataValues.id
         };
 
         alltabs.push(hbsObj);
