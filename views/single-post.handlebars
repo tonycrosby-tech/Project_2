@@ -19,38 +19,30 @@
         <thead>
             <tr>
                 <td colspan="3" class="tcat center">
-                    <b>» Books</b>
+                    <b> {{ title }}</b>
                 </td>
             </tr>
         </thead>
-    </table>
-    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+            <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
         <tbody>
-            <tr align="center">
-                <td class="thead">&nbsp;</td>
-                <td class="thead" width="100%" align="left">Posts</td>
-            </tr>
-            {{#each postinfo}}
                 <tr align="center">
                     <td class="alt2"></td>
                     <td class="alt1Active" align="left" id="f87">
                         <div>
-                            <a href="/forum/category/books/{{ id }}"><strong>{{ title }}</strong></a>
+                            <p>{{ body }}</p>
+                        </div>
+                    </td>
+                </tr>
+                 <tr align="center">
+                    <td class="alt2"></td>
+                    <td class="alt1Active" align="left" id="f87">
+                        <div>
                             <div class="smallfont">
                                 <span style="cursor:pointer">created by: {{ userEmail }} </span>
                             </div>
                         </div>
                     </td>
                 </tr>
-            {{/each}}
-
         </tbody>
     </table>
-</div>
-
-<div class="container">
-    <div class="category-content">
-        <a href="/forum/posts"><button class='category-button' id='new-post'>Create New
-                Post</button></a>
-    </div>
-</div>
+    </table>
