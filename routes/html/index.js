@@ -165,4 +165,7 @@ module.exports = function (app) {
   app.get('/forum/category/Books', isAuthenticated, (_req, res) => {
     res.render('books', _req.user);
   });
+  app.get('/forum/category/other', isAuthenticated, (_req, res) => {
+    res.render('other', _req.user);
+  });
 };
