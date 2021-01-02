@@ -127,7 +127,7 @@
                                 {{#each postinfo}}
                                 <tr>
                                     <td style="padding:1px" class="smallfont">
-                                        <a href="/forum/category/{{name}}"
+                                        <a href="/forum/category/{{name}}/{{id}}"
                                             title="Post title goes here">
                                             {{!-- {{#each posts}}
                                             {{> members/posts-block }}
@@ -140,12 +140,12 @@
                                           title="username">
                                             <b>
                                                 <font color="#2F4F4F"> 
-                                                    {{email}} 
+                                                    {{../userEmail}} 
                                                 </font>
                                             </b>
                                         </a>
                                         &nbsp;&nbsp;
-                                         <a href="#" class="isDisabled" style="text-decoration:none;font-family:Arial;font-size:8px"
+                                         <a href="/forum/category/{{name}}/{{id}}" style="text-decoration:none;font-family:Arial;font-size:8px"
                                             title="Jump to first unread post in category">►</a> 
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"

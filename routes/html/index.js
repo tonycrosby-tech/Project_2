@@ -54,6 +54,10 @@ module.exports = function (app) {
           name: element.Category.dataValues.name,
           bodyUpdatedAt: element.dataValues.updatedAt,
           categories: element.dataValues.name,
+<<<<<<< HEAD
+=======
+          id: element.dataValues.id
+>>>>>>> fb9a267f99e62783fdf26d629a1102aa7a37865a
         };
 
         alltabs.push(hbsObj);
