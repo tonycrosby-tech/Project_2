@@ -284,6 +284,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -302,6 +304,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -320,6 +324,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -338,6 +344,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
