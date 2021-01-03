@@ -39,7 +39,7 @@ module.exports = function (app) {
     // const userEmail = _req.user.email;
 
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -146,7 +146,7 @@ module.exports = function (app) {
 
   app.get('/forum/category/Sports', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -178,7 +178,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/Movies', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -210,7 +210,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/Books', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -242,7 +242,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/other', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -276,7 +276,7 @@ module.exports = function (app) {
 
   app.get('/forum/category/other/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -296,7 +296,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/sports/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -316,7 +316,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/movies/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -336,7 +336,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/books/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]

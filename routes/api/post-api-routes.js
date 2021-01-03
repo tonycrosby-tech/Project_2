@@ -4,7 +4,7 @@ const isAuthenticated = require('../../config/middleware/isAuthenticated');
 
 module.exports = function (app) {
   app.get('/api/posts', isAuthenticated, (req, res) => {
-    db.Post.findAll({ include: [db.User] }).then(function (dbPost) {
+    db.Post.findAll({ include: [db.User, db.Comments] }).then(function (dbPost) {
       res.json(dbPost);
     });
   });
@@ -14,7 +14,7 @@ module.exports = function (app) {
       where: {
         id: req.params.id
       },
-      include: [db.User]
+      include: [db.User, db.Comments]
     }).then(function (dbPost) {
       res.json(dbPost);
     });
