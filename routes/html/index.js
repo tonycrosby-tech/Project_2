@@ -345,6 +345,7 @@ module.exports = function (app) {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
+        bodyUpdatedAt: dbPost.dataValues.updatedAt,
         name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
@@ -354,4 +355,6 @@ module.exports = function (app) {
       res.render('single-post', hbsObj);
     });
   });
+
+  
 };
