@@ -9,6 +9,7 @@
                     </b>-
                     This is where the magic Happens!
                 </td>
+                <div id="root"></div>
             </tr>
             <tr>
                 <td class="alt1" colspan="6">
@@ -85,6 +86,14 @@
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
                                             title="Name of category goes here">Books</a>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
+                                                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont">4&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/other"
+                                            title="Name of category goes here">Other</a>
                                     </td>
                                     <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
@@ -191,3 +200,24 @@
         </table>
     </div>
 </div>
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      function tick() {
+        const element = (
+          <div>
+            <h2>It is {new Date().toLocaleTimeString()}.</h2>
+          </div>
+        );
+        // highlight-next-line
+        ReactDOM.render(element, document.getElementById("root"));
+      }
+      setInterval(tick, 1000);
+    </script>
