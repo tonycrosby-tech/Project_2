@@ -354,7 +354,6 @@ module.exports = function (app) {
 
       res.render('single-post', hbsObj);
     });
-  });
-
+  })
   
 };
