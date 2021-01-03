@@ -41,6 +41,60 @@
     <li><a href="/logout"> Logout </a></li>
   </ul>
 
+  <div class="spacer"></div>
+
+  <div class="container">
+
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+      <tbody>
+        <tr>
+          <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
+            </b>-
+            This is where the magic Happens!
+            <br><br>
+            <div id="root"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="alt1" colspan="6">
+            <center>
+              WhatChaMaCallIt is a brand new forum! :)
+              {{!-- {{#each categories}}
+              {{> members/categories-block}}
+              {{/each}}
+              Posts: 0{{#each posts}}
+              {{> members/posts-block}}
+              {{/each}}
+              Members: 0{{#each users}}
+              {{> members/users-block}}
+              {{/each}} --}}
+
+
+
+              {{!-- <br><br>categories:
+
+
+              ,
+              Posts:
+
+              , Members: --}}
+
+
+
+              <br><br>
+              If you have a complaint, feedback, or an issue, then please contact us on github by clicking
+              this
+              link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
+                <font color="blue"><b>Contact us</b></font>
+              </a>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="spacer"></div>
+
   {{{ body }}}
 
   <div class="spacer"></div>
@@ -94,6 +148,23 @@
     $(document).ready(function () {
       $('select').formSelect();
     });
+  </script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function tick() {
+      const element = (
+        <div>
+          <b>Current Time: </b>
+          <b>{new Date().toLocaleTimeString()}.</b>
+          <b> (CST)</b>
+        </div>
+      );
+      // highlight-next-line
+      ReactDOM.render(element, document.getElementById("root"));
+    }
+    setInterval(tick, 0);
   </script>
 </body>
 

@@ -69,10 +69,6 @@ module.exports = function (app) {
     });
   });
 
-  app.get('/help', isAuthenticated, (_req, res) => {
-    res.render('help', _req.user);
-  });
-
   app.get('/forum', isAuthenticated, (_req, res) => {
     db.Category.findAll({}).then(function (dbCategory) {
       const catarray = [];
@@ -114,8 +110,19 @@ module.exports = function (app) {
   // });
 
   app.get('/about', isAuthenticated, (_req, res) => {
-    res.render('about', _req.user);
+    const hbsObject = {
+      userEmail: _req.user.email
+    };
+    res.render('about', hbsObject);
   });
+
+  app.get('/help', isAuthenticated, (_req, res) => {
+    const hbsObject = {
+      userEmail: _req.user.email
+    };
+    res.render('help', hbsObject);
+  });
+
   app.get('/home', isAuthenticated, (_req, res) => {
     res.render('index', _req);
   });
