@@ -165,5 +165,16 @@ main {
 }
 
 .hidden {
+<<<<<<< HEAD
   display: none;
 }
+=======
+    display:none;
+}
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+>>>>>>> df68ec2f7f37c2bd8316b5cf11a5463394491da7

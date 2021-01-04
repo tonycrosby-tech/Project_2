@@ -39,7 +39,7 @@ module.exports = function (app) {
     // const userEmail = _req.user.email;
 
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -67,10 +67,6 @@ module.exports = function (app) {
 
       res.render('members', sendObject);
     });
-  });
-
-  app.get('/help', isAuthenticated, (_req, res) => {
-    res.render('help', _req.user);
   });
 
   app.get('/forum', isAuthenticated, (_req, res) => {
@@ -114,8 +110,19 @@ module.exports = function (app) {
   // });
 
   app.get('/about', isAuthenticated, (_req, res) => {
-    res.render('about', _req.user);
+    const hbsObject = {
+      userEmail: _req.user.email
+    };
+    res.render('about', hbsObject);
   });
+
+  app.get('/help', isAuthenticated, (_req, res) => {
+    const hbsObject = {
+      userEmail: _req.user.email
+    };
+    res.render('help', hbsObject);
+  });
+
   app.get('/home', isAuthenticated, (_req, res) => {
     res.render('index', _req);
   });
@@ -146,7 +153,7 @@ module.exports = function (app) {
 
   app.get('/forum/category/Sports', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -178,7 +185,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/Movies', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -210,7 +217,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/Books', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -242,7 +249,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/other', isAuthenticated, (_req, res) => {
     db.Post.findAll({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
@@ -276,7 +283,7 @@ module.exports = function (app) {
 
   app.get('/forum/category/other/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -284,6 +291,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -294,7 +303,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/sports/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -302,6 +311,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -312,7 +323,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/movies/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -320,6 +331,8 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
@@ -330,7 +343,7 @@ module.exports = function (app) {
   });
   app.get('/forum/category/books/:id', isAuthenticated, (_req, res) => {
     db.Post.findOne({
-      include: [db.User, db.Category],
+      include: [db.User, db.Category, db.Comments],
       where: { id: _req.params.id },
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
@@ -338,6 +351,9 @@ module.exports = function (app) {
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
+        bodyCreatedAt: dbPost.dataValues.createdAt,
+        bodyUpdatedAt: dbPost.dataValues.updatedAt,
+        name: dbPost.Category.dataValues.name,
         userEmail: dbPost.User.dataValues.email
       };
 
