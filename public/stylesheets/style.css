@@ -148,7 +148,9 @@ nav ul a {
   border-radius: 0;
   font-size: 16px;
 }
-
+.page-footer {
+  background-image: url('/images/funky-lines.png');
+}
 body {
   display: flex;
   min-height: 100vh;
@@ -165,11 +167,7 @@ main {
 }
 
 .hidden {
-<<<<<<< HEAD
   display: none;
-}
-=======
-    display:none;
 }
 .isDisabled {
   color: currentColor;
@@ -177,4 +175,3 @@ main {
   opacity: 0.5;
   text-decoration: none;
 }
->>>>>>> df68ec2f7f37c2bd8316b5cf11a5463394491da7
