@@ -172,3 +172,18 @@ main {
   opacity: 0.5;
   text-decoration: none;
 }
+
+@media (max-width: 576px) {
+  .scrollit {
+    height:185px;
+    overflow:scroll;
+  }
+}
+
+@media (max-width: 576px) {
+  .truncate2 {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
