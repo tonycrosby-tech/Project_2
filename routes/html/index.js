@@ -54,7 +54,8 @@ module.exports = function (app) {
           name: element.Category.dataValues.name,
           bodyUpdatedAt: element.dataValues.updatedAt,
           categories: element.dataValues.name,
-          id: element.dataValues.id
+          id: element.dataValues.id,
+          author: element.User.dataValues.email
         };
 
         alltabs.push(hbsObj);
@@ -169,7 +170,8 @@ module.exports = function (app) {
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
             userEmail: element.User.dataValues.email,
-            id: element.dataValues.id
+            id: element.dataValues.id,
+            author: element.User.dataValues.email
           };
 
           alltabs.push(hbsObj);
@@ -201,7 +203,8 @@ module.exports = function (app) {
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
             userEmail: element.User.dataValues.email,
-            id: element.dataValues.id
+            id: element.dataValues.id,
+            author: element.User.dataValues.email
           };
 
           alltabs.push(hbsObj);
@@ -233,7 +236,8 @@ module.exports = function (app) {
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
             userEmail: element.User.dataValues.email,
-            id: element.dataValues.id
+            id: element.dataValues.id,
+            author: element.User.dataValues.email
           };
 
           alltabs.push(hbsObj);
@@ -265,7 +269,8 @@ module.exports = function (app) {
             name: element.Category.dataValues.name,
             bodyUpdatedAt: element.dataValues.updatedAt,
             userEmail: element.User.dataValues.email,
-            id: element.dataValues.id
+            id: element.dataValues.id,
+            author: element.User.dataValues.email
           };
 
           alltabs.push(hbsObj);
@@ -293,7 +298,8 @@ module.exports = function (app) {
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
-        userEmail: dbPost.User.dataValues.email
+        author: dbPost.User.dataValues.email,
+        userEmail: _req.user.email
       };
 
       console.log(hbsObj);
@@ -313,7 +319,8 @@ module.exports = function (app) {
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
-        userEmail: dbPost.User.dataValues.email
+        author: dbPost.User.dataValues.email,
+        userEmail: _req.user.email
       };
 
       console.log(hbsObj);
@@ -333,7 +340,8 @@ module.exports = function (app) {
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
-        userEmail: dbPost.User.dataValues.email
+        author: dbPost.User.dataValues.email,
+        userEmail: _req.user.email
       };
 
       console.log(hbsObj);
@@ -354,7 +362,8 @@ module.exports = function (app) {
         bodyCreatedAt: dbPost.dataValues.createdAt,
         bodyUpdatedAt: dbPost.dataValues.updatedAt,
         name: dbPost.Category.dataValues.name,
-        userEmail: dbPost.User.dataValues.email
+        author: dbPost.User.dataValues.email,
+        userEmail: _req.user.email
       };
 
       console.log(hbsObj);

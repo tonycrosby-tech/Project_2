@@ -20,28 +20,28 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">1&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">1&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/sports"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/sports"
                                             title="Name of category goes here">Sports</a></td>
                                 </tr>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">2&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/movies"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/movies"
                                             title="Name of category goes here">Movies</a></td>
                                 </tr>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">3&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/books"
                                             title="Name of category goes here">Books</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">4&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">4&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/other"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/other"
                                             title="Name of category goes here">Other</a>
                                     </td>
                                 </tr>
@@ -75,7 +75,7 @@
                                 {{!-- {{/each}} --}}
                                 {{#each postinfo}}
                                 <tr>
-                                    <td style="padding:1px" class="smallfont">
+                                    <td style="padding:1px" class="smallfont tbody">
                                         <a href="/forum/category/{{name}}/{{id}}" title="Post title goes here">
                                             {{!-- {{#each posts}}
                                             {{> members/posts-block }}
@@ -83,11 +83,11 @@
                                             {{title}}
                                         </a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap">
+                                    <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap">
                                         <a href="#" title="username">
                                             <b>
                                                 <font color="#2F4F4F">
-                                                    {{../userEmail}}
+                                                    {{author}}
                                                 </font>
                                             </b>
                                         </a>
@@ -95,11 +95,11 @@
                                         <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
                                             title="Jump to first unread post in category" class="isDisabled">►</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
+                                    <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap"
                                         title="Date/Time">
                                         {{bodyCreatedAt}}
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a
+                                    <td style="padding:1px" class="smallfont tbody" align="right" nowrap="nowrap"><a
                                             href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
                                     </td>
 
