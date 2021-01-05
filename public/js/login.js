@@ -35,10 +35,10 @@ $(document).ready(() => {
         // If there's an error, log the error
       })
       .catch(handleLoginErr);
-    }
-  
-    function handleLoginErr () {
-      $('#alert .msg').text('Email or Username Incorrect! Please Enter a Different Email Address or Username!');
-      $('#alert').fadeIn(500);
-    }
+  }
+
+  function handleLoginErr () {
+    $('#alert .msg').text('Email or Username Incorrect! Please Enter a Different Email Address or Username!');
+    $('#alert').fadeIn(500);
+  }
 });
