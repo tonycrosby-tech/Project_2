@@ -4,7 +4,7 @@
 
     <div class="post-setup" style="padding: 0px 0px 6px 0px">
         <br />
-
+        {{#each postInfo}}
         <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
             <thead>
                 <tr>
@@ -54,49 +54,67 @@
             </tbody>
         </table>
         <br />
+        {{/each}}
     </div>
+</div>
 
-    <div class="container">
+<div class="container">
 
-        <div class="comment-setup" style="padding: 0px 0px 6px 0px">
-            <br />
+    <div class="comment-setup" style="padding: 0px 0px 6px 0px">
+        <br />
 
-            <table id="comment-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td class="thead" style="font-weight: normal">
-                            {{bodyUpdatedAt}}
-                            </td>
-                        <td class="alt1">
-                            <b>{{title}}</b>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td class="alt2" width="200">
-                            <div id="user-profile">
-                                <center>
-                                    <a class="bigusername" rel="nofollow" href="#">{{userEmail}}</a>
-                                    <hr>
-                                </center>
-                            </div>
-                            <div class="smallfont">
-                                <br />
-                                <center>
-                                    <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar" border="1"
-                                        title="user's Avatar" />
-                                </center>
-                            </div>
-                        </td>
-                        <td class="alt1" id="comment">
+        <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+            <thead>
+                <tr>
+                    <td colspan="3" class="tcat center">
+                        <b style='font-size:16px;'>Comments</b>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        {{#each Comments}}
+        <table id="comment-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+            <tbody>
+                <tr valign="top">
+                    <td class="alt2" width="200">
+                        <div id="user-profile">
+                            <center>
+                                <a class="bigusername" rel="nofollow" href="#">{{author}}</a>
+                                <hr>
+                            </center>
+                        </div>
+                        <div class="smallfont">
+                            <br />
+                            <center>
+                                <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar" border="1"
+                                    title="user's Avatar" />
+                            </center>
+                        </div>
+                    </td>
+                    <td class="alt1" id="comment">
 
-                            <div id="comment_message">
-                                comment
-                            </div>
+                        <div id="comment_message">
+                            {{body}}
+                        </div>
 
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        {{/each}}
+        <br />
+
+        <div class="row">
+            <div class="col s12">
+                <label>Write your Comments here  (500)<textarea id="comments" placeholder='Leave a comment join the conversation.' class="materialize-textarea" data-length="500"></textarea>
+                </label>
+            </div>
         </div>
+        {{#each postInfo}}
+      <div id="postId" value = "{{postId}}"></div>
+        {{/each}}
+        <button type="button" class="btn waves-effect waves-light blue darken-4 create-post" id="createComment">Reply</button>
     </div>
+</div>
+
+<script src="/js/comment.js"></script>
