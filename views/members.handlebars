@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <table class="tborder scrollit truncate2" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
         <thead>
             <tr>
                 <td colspan="3" class="tcat">Stuff thats <b style='color: red;'>HOT</b> Right now!</td>
@@ -76,7 +76,7 @@
                                 {{!-- {{/each}} --}}
                                 {{#each postinfo}}
                                 <tr>
-                                    <td style="padding:1px" class="smallfont tbody">
+                                    <td style="padding:1px" class="smallfont tbody responsive-table">
                                         <a href="/forum/category/{{name}}/{{id}}" title="Post title goes here">
                                             {{!-- {{#each posts}}
                                             {{> members/posts-block }}
@@ -96,26 +96,6 @@
                                         <a
                                             href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
                                     </td>
-                                    {{!-- <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap">
-                                        <a href="#" title="username">
-                                            <b>
-                                                <font color="#2F4F4F">
-                                                    {{author}}
-                                                </font>
-                                            </b>
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in category" class="isDisabled">►</a>
-                                    </td>
-                                    <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap"
-                                        title="Date/Time">
-                                        {{bodyCreatedAt}}
-                                    </td>
-                                    <td style="padding:1px" class="smallfont tbody" align="right" nowrap="nowrap"><a
-                                            href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
-                                    </td> --}}
-
                                 </tr>
                                 {{/each}}
 
