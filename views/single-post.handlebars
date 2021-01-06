@@ -1,174 +1,55 @@
-{{!-- <div class="spacer"></div>
+<div class="spacer"></div>
 
 <div class="container">
 
-    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-        <tbody>
-            <tr>
-                <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
-                    </b>-
-                    This is where the magic Happens!
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="post-setup" style="padding: 0px 0px 6px 0px">
+        <br />
 
-    <div class="spacer"></div>
-
-    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-        <thead>
-            <tr>
-                <td colspan="3" class="tcat center">
-                    <b> {{ title }}</b>
-                </td>
-            </tr>
-        </thead>
-        <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-            <tbody>
-                <tr align="center">
-                    <td class="alt2"></td>
-                    <td class="alt1Active" align="left" id="f87">
-                        <div>
-                            <p>{{ body }}</p>
-                        </div>
-                    </td>
-                </tr>
-                <tr align="center">
-                    <td class="alt2"></td>
-                    <td class="alt1Active" align="left" id="f87">
-                        <div>
-                            <div class="smallfont">
-                                <span style="cursor:pointer">created by: {{ userEmail }} </span>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </table> --}}
-
-    <div class="spacer"></div>
-
-    <div class="container">
-
-        {{!-- <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-            <tbody>
-                <tr>
-                    <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail
-                            }}
-                        </b>-
-                        This is where the magic Happens!
-                    </td>
-                </tr>
-            </tbody>
-        </table> --}}
-
-        <div class="post-setup" style="padding: 0px 0px 6px 0px">
-            <br />
-
-            <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-                <thead>
-                    <tr>
-                        <td colspan="3" class="tcat center">
-                            <b style='font-size:16px;'>{{name}}</b>
-                        </td>
-                    </tr>
-                </thead>
-            </table>
-
-            <table id="post-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td class="thead" style="font-weight: normal">
-                            {{bodyCreatedAt}}
-                        </td>
-                        <td class="alt1">
-                            <b>{{title}}</b>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td class="alt2" width="200">
-                            <div id="user-profile">
-                                <center>
-                                    <a class="bigusername" rel="nofollow" href="#">{{author}}</a>
-                                    <hr>
-                                </center>
-                            </div>
-                            <div>
-                                <br />
-                                <center>
-                                    <img class='user-profile-pic' src="/images/default-profile-pic.jpg"
-                                        alt="user's Avatar" border="1" title="user's Avatar" />
-                                </center>
-                            </div>
-                        </td>
-                        <td class="alt1" id="post_message">
-
-                            <div id="post_message">
-                                {{body}}
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-        </div>
-    </div>
-
-    {{!-- <div class="container">
         <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
             <thead>
                 <tr>
                     <td colspan="3" class="tcat center">
-                        <b style='font-size:16px;'>Comments</b>
+                        <b style='font-size:16px;'>{{name}}</b>
                     </td>
                 </tr>
             </thead>
         </table>
+
+        <table id="post-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+            <tbody>
+                <tr>
+                    <td class="thead" style="font-weight: normal">
+                        {{bodyCreatedAt}}
+                    </td>
+                    <td class="alt1">
+                        <b>{{title}}</b>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="alt2" width="200">
+                        <div id="user-profile">
+                            <center>
+                                <a class="bigusername" rel="nofollow" href="#">{{author}}</a>
+                                <hr>
+                            </center>
+                        </div>
+                        <div>
+                            <br />
+                            <center>
+                                <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar"
+                                    border="1" title="user's Avatar" />
+                            </center>
+                        </div>
+                    </td>
+                    <td class="alt1" id="post_message">
+
+                        <div id="post_message">
+                            {{body}}
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
     </div>
-
-    <div class="container">
-
-        <div class="comment-setup" style="padding: 0px 0px 6px 0px">
-            <br />
-
-            <table id="comment-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td class="thead" style="font-weight: normal">
-                            {{!-- {{bodyUpdatedAt}} --}}
-                            {{!-- </td>
-                        <td class="alt1"> --}}
-                            {{!-- <b>{{title}}</b> --}}
-                            {{!-- </td>
-                    </tr>
-                    <tr valign="top">
-                        <td class="alt2" width="200">
-                            <div id="user-profile">
-                                <center>
-                                    {{!-- <a class="bigusername" rel="nofollow" href="#">{{userEmail}}</a> --}}
-                                    {{!--
-                                    <hr>
-                                </center>
-                            </div>
-                            <div class="smallfont">
-                                <br />
-                                <center>
-                                    <img src="https://via.placeholder.com/150" alt="user's Avatar" border="1"
-                                        title="user's Avatar" />
-                                </center>
-                            </div>
-                        </td>
-                        <td class="alt1" id="comment">
-
-                            <div id="comment_message">
-                                comment
-                            </div> --}}
-                            {{!--
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-        </div>
-    </div> --}}
+</div>
