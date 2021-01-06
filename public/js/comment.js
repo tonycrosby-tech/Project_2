@@ -1,17 +1,17 @@
 const $ = window.$;
 
-const createComment = $("#createComment");
-const userComment = $("#comments");
-const postId = $("#postId");
+const createComment = $('#createComment');
+const userComment = $('#comments');
+const postId = $('#postId');
 
-createComment.on("click", (event) => {
+createComment.on('click', (event) => {
   event.preventDefault();
 
-  const postInt = postId.attr("value");
+  const postInt = postId.attr('value');
 
   const sendPostToServer = {
     body: userComment.val().trim(),
-    postId: postInt,
+    postId: postInt
   };
 
   console.log(postInt);
@@ -21,9 +21,9 @@ createComment.on("click", (event) => {
     return;
   }
   // /api/posts
-  $.post("/api/comments", sendPostToServer)
+  $.post('/api/comments', sendPostToServer)
     .then((result) => {
-      location.reload();
+      window.location.reload();
     })
     .catch((err) => {
       console.log(err);

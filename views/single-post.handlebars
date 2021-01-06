@@ -43,9 +43,12 @@
                     </td>
                     <td class="alt1" id="post_message">
 
-                        <div id="post_message">
-                            {{body}}
-                        </div>
+    <div class="container">
+        <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+            <thead>
+                <tr>
+                    <td colspan="3" class="tcat center">
+                        <b style='font-size:16px;'>Comments</b>
                     </td>
                 </tr>
             </tbody>
@@ -108,7 +111,7 @@
             </div>
         </div>
         {{#each postInfo}}
-      <div id="postId" value = "{{postId}}">{{postId}}</div>
+      <div id="postId" value = "{{postId}}"></div>
         {{/each}}
         <button type="button" class="btn waves-effect waves-light blue darken-4 create-post" id="createComment">Reply</button>
     </div>
