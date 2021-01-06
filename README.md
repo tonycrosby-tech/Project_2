@@ -47,27 +47,26 @@ npm i
 
 Visit the website (linked below) sign up or log in, and start submitting crimes!
 
-![login]()
-
+- ![login]()
 - this screenshots is login page of WhatChaMaCallIt
-  ![home]()
+- ![home]()
 - this screenshots is homescreen page of WhatChaMaCallIt
-  ![forum]()
+- ![forum]()
 - this screenshots is forum page of WhatChaMaCallIt
-  ![creat-post]()
+- ![creat-post]()
 - this screenshots is creat-post page of WhatChaMaCallIt,where user crest post
-  ![home-with post]()
+- ![home-with post]()
 - this screenshots is home-with post page of WhatChaMaCallIt
-  ![commit]()
+- ![commit]()
 - this screenshots is post page of WhatChaMaCallIt with commit
 
 ## Deployed Website
 
-[WhatChaMaCallIt](https://fierce-mountain-61777.herokuapp.com/)
+[WhatChaMaCallIt]()
 
 ## Repository
 
-[WhatChaMaCallIt](https://github.com/KirkpatrickPaul/Project02_Crime_Reporting)
+[WhatChaMaCallIt](https://github.com/tonycrosby-tech/Project_2.git)
 
 ## Future Development
 
@@ -94,16 +93,9 @@ Visit the website (linked below) sign up or log in, and start submitting crimes!
 
 ## Questions
 
-If you have any questions about the repo, please open an issue or contact us directly:
+If you have any questions about the repo, please open an issue or contact us directly or you can check out more of our work at:
 
-- Paul Kirkpatrick ([radicalturnip@gmail.com](radicalturnip@gmail.com))
-- Seth Glenn ([sbgees@yahoo.com](sbgees@yahoo.com))
-- Anthony Gamon ([anthonygamon@icloud.com](anthonygamon@icloud.com))
-- Kelsey Eckelberry ([kelseyeckelberry@gmail.com](kelseyeckelberry@gmail.com))
-
-You can check out more of our work at:
-
-- [Tony Crosby]https://github.com/tonycrosby-tech)
+- [Tony Crosby](https://github.com/tonycrosby-tech)
 - [Parth Patel](https://github.com/parth167)
 - [Logan Pippin](https://github.com/LoganPippin)
 - [Mario Thompson](https://github.com/MarioThompson0010)
