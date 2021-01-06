@@ -51,7 +51,7 @@
 
     <div class="container">
 
-        <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+        {{!-- <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
             <tbody>
                 <tr>
                     <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail
@@ -61,7 +61,7 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table> --}}
 
         <div class="post-setup" style="padding: 0px 0px 6px 0px">
             <br />
@@ -90,15 +90,15 @@
                         <td class="alt2" width="200">
                             <div id="user-profile">
                                 <center>
-                                    <a class="bigusername" rel="nofollow" href="#">{{userEmail}}</a>
+                                    <a class="bigusername" rel="nofollow" href="#">{{author}}</a>
                                     <hr>
                                 </center>
                             </div>
-                            <div class="smallfont">
+                            <div>
                                 <br />
                                 <center>
-                                    <img src="https://via.placeholder.com/150" alt="user's Avatar" border="1"
-                                        title="user's Avatar" />
+                                    <img class='user-profile-pic' src="/images/default-profile-pic.jpg"
+                                        alt="user's Avatar" border="1" title="user's Avatar" />
                                 </center>
                             </div>
                         </td>
@@ -137,17 +137,18 @@
                     <tr>
                         <td class="thead" style="font-weight: normal">
                             {{!-- {{bodyUpdatedAt}} --}}
-                        {{!-- </td>
+                            {{!-- </td>
                         <td class="alt1"> --}}
                             {{!-- <b>{{title}}</b> --}}
-                        {{!-- </td>
+                            {{!-- </td>
                     </tr>
                     <tr valign="top">
                         <td class="alt2" width="200">
                             <div id="user-profile">
                                 <center>
                                     {{!-- <a class="bigusername" rel="nofollow" href="#">{{userEmail}}</a> --}}
-                                    {{!-- <hr>
+                                    {{!--
+                                    <hr>
                                 </center>
                             </div>
                             <div class="smallfont">
@@ -163,7 +164,8 @@
                             <div id="comment_message">
                                 comment
                             </div> --}}
-                        {{!-- </td>
+                            {{!--
+                        </td>
                     </tr>
                 </tbody>
             </table>

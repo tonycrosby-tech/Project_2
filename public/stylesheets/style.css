@@ -175,3 +175,24 @@ main {
   opacity: 0.5;
   text-decoration: none;
 }
+
+@media (max-width: 576px) {
+  .scrollit {
+    height:286px;
+    width:372px;
+    overflow:scroll;
+  }
+}
+
+@media (max-width: 576px) {
+  .truncate2 {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.user-profile-pic {
+  height: 150px;
+  width: 150px;
+}

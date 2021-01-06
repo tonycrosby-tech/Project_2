@@ -3,12 +3,12 @@ module.exports = function (sequelize, DataTypes) {
     title: {
       type: DataTypes.STRING,
       allowNull: true,
-      validate: { len: [1] }
+      validate: { len: [1, 15] }
     },
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: { len: [1] }
+      validate: { len: [1, 500] }
     }
   });
 
