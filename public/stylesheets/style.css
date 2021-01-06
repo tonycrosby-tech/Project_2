@@ -175,11 +175,11 @@ main {
   opacity: 0.5;
   text-decoration: none;
 }
-<<<<<<< HEAD
 
 @media (max-width: 576px) {
   .scrollit {
-    height:185px;
+    height:286px;
+    width:372px;
     overflow:scroll;
   }
 }
@@ -191,5 +191,8 @@ main {
     text-overflow: ellipsis;
   }
 }
-=======
->>>>>>> 1eefbd16379f70b2ea854584859fec0014a119f5
+
+.user-profile-pic {
+  height: 150px;
+  width: 150px;
+}
