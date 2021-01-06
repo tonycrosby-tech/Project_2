@@ -372,8 +372,9 @@ module.exports = function (app) {
     });
   });
 
-  app.use(function(req,res){
+  app.use(function (req, res) {
     res.status(404);
+
     // respond with html page
     if (req.accepts('html')) {
       res.render('404', { url: req.url });
