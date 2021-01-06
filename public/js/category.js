@@ -12,7 +12,6 @@ $(document).ready(() => {
 
     $.post('/api/category', sendToCategoryCreate)
       .then((result) => {
-        // window.location.replace('/forum');
         window.location.reload();
         // If there's an error, log the error
       })

@@ -9,13 +9,13 @@
             <thead>
                 <tr>
                     <td colspan="3" class="tcat center">
-                        <b style='font-size:16px;'>{{name}}</b>
+                        <b style='font-size:16px;'>Category: {{name}}</b>
                     </td>
                 </tr>
             </thead>
         </table>
 
-        <table id="post-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+        <table id="post-id" class="tborder center break-words" cellpadding="6" cellspacing="1" border="0" width="100%">
             <tbody>
                 <tr>
                     <td class="thead" style="font-weight: normal">
@@ -58,68 +58,54 @@
                 </tr>
             </tbody>
         </table>
-        <br />
-        {{/each}}
+        <div class="spacer"></div>
+        <button class="btn blue darken-4 waves-effect waves-light right" type="submit" id='reply-button' name="action">Reply
+            <i class="material-icons right">send</i>
+        </button>
+        <div class="spacer"></div>
     </div>
-</div>
-
-<div class="container">
-
+    <h4 class='center comment-section'><b>Comment Section</b></h4>
+    <hr>
+    {{!-- {{#each }} --}}
     <div class="comment-setup" style="padding: 0px 0px 6px 0px">
         <br />
-
-        <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-            <thead>
+        <table id="comment-id" class="tborder center break-words" cellpadding="6" cellspacing="1" border="0"
+            width="100%">
+            <tbody>
                 <tr>
-                    <td colspan="3" class="tcat center">
-                        <b style='font-size:16px;'>Comments</b>
+                    <td class="thead" style="font-weight: normal;">
+                        {{!-- updatedat: --}}
+                    </td>
+                    <td class="alt1">
+                        {{!-- <b>title</b> --}}
                     </td>
                 </tr>
-            </thead>
-        </table>
-        {{#each Comments}}
-        <table id="comment-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-            <tbody>
                 <tr valign="top">
                     <td class="alt2" width="200">
                         <div id="user-profile">
                             <center>
-                                <a class="bigusername" rel="nofollow" href="#">{{author}}</a>
+                                {{!-- <a class="bigusername" rel="nofollow" href="#">email here</a> --}}
                                 <hr>
                             </center>
                         </div>
                         <div class="smallfont">
                             <br />
                             <center>
-                                <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar" border="1"
-                                    title="user's Avatar" />
+                                <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar"
+                                    border="1" title="user's Avatar" />
                             </center>
                         </div>
                     </td>
                     <td class="alt1" id="comment">
-
                         <div id="comment_message">
-                            {{body}}
+                            {{!-- <p>comment here</p> --}}
                         </div>
-
                     </td>
                 </tr>
             </tbody>
         </table>
-        {{/each}}
         <br />
-
-        <div class="row">
-            <div class="col s12">
-                <label>Write your Comments here  (500)<textarea id="comments" placeholder='Leave a comment join the conversation.' class="materialize-textarea" data-length="500"></textarea>
-                </label>
-            </div>
-        </div>
-        {{#each postInfo}}
-      <div id="postId" value = "{{postId}}"></div>
         {{/each}}
-        <button type="button" class="btn waves-effect waves-light blue darken-4 create-post" id="createComment">Reply</button>
     </div>
+    {{!-- {{/each}} --}}
 </div>
-
-<script src="/js/comment.js"></script>
