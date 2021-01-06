@@ -4,7 +4,7 @@
 
 ## Description
 
-- Whatchamacallit is a mobile-responsive forum where users from all around the world can post and comment about books, movies,sports, and/or other.
+- Whatchamacallit is a mobile-responsive forum where users from all around the world can post and comment about books, movies, sports, and/or other.
 - User is able to visit the deployed website and is prompted to sign up or log in. Once logged in, the user is able to submit a post about a sport, movie, book, (or other).
 - Once the user-generated post/commit is submitted to the database, it is then posted on the home page.
 
