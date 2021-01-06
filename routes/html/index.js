@@ -417,6 +417,8 @@ module.exports = function (app) {
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
+      console.log(dbPost.Comments.dataValues);
+
       const allComments = [];
       const info = [];
 
