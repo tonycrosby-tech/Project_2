@@ -83,8 +83,20 @@
                                             {{/each}} --}}
                                             {{title}}
                                         </a>
+                                        <a href="#" title="username">
+                                            <b>
+                                                <font color="#2F4F4F">
+                                                    {{author}}
+                                                </font>
+                                            </b>
+                                        </a>
+                                        &nbsp;&nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px" title="Jump to first unread post in category" class="isDisabled">►</a>
+                                        {{bodyCreatedAt}}
+                                        <a
+                                            href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap">
+                                    {{!-- <td style="padding:1px" class="smallfont tbody" align="center" nowrap="nowrap">
                                         <a href="#" title="username">
                                             <b>
                                                 <font color="#2F4F4F">
@@ -102,7 +114,7 @@
                                     </td>
                                     <td style="padding:1px" class="smallfont tbody" align="right" nowrap="nowrap"><a
                                             href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
-                                    </td>
+                                    </td> --}}
 
                                 </tr>
                                 {{/each}}
