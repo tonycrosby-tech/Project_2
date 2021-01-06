@@ -175,3 +175,21 @@ main {
   opacity: 0.5;
   text-decoration: none;
 }
+<<<<<<< HEAD
+
+@media (max-width: 576px) {
+  .scrollit {
+    height:185px;
+    overflow:scroll;
+  }
+}
+
+@media (max-width: 576px) {
+  .truncate2 {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+=======
+>>>>>>> 1eefbd16379f70b2ea854584859fec0014a119f5
