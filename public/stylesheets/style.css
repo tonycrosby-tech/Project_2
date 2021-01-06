@@ -4,7 +4,7 @@ form.login {
 }
 
 body {
-  background-image: url('/images/funky-lines.png');
+  background-image: url("/images/funky-lines.png");
 
   color: #26353f;
   font: 16px verdana, sans-serif;
@@ -136,7 +136,7 @@ nav ul a {
   font-size: 16px;
 }
 .page-footer {
-  background-image: url('/images/funky-lines.png');
+  background-image: url("/images/funky-lines.png");
 }
 body {
   display: flex;
@@ -165,9 +165,9 @@ main {
 
 @media (max-width: 576px) {
   .scrollit {
-    height:286px;
-    width:372px;
-    overflow:scroll;
+    height: 286px;
+    width: 372px;
+    overflow: scroll;
   }
 }
 
@@ -182,4 +182,37 @@ main {
 .user-profile-pic {
   height: 150px;
   width: 150px;
+}
+
+@media (max-width: 576px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap:break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap:break-word;
+  }
+}
+
+@media (max-width: 992px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap:break-word;
+  }
+}
+
+@media (max-width: 1200px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap:break-word;
+  }
+}
+
+.comment-section {
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0
 }
