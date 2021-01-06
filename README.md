@@ -23,16 +23,16 @@
 
 ```
 AS A user
-WHEN I enters an email and password
-THEN I can log in
-WHEN I loged in
-THEN I can make a post about a sport, movie,  book or other
-WHEN I creates a post
-THEN I can view it on the home screen
-WHEN I sees others  post
-THEN I can comment on it
-WHEN others sees my  post
-THEN They can comment on it
+WHEN a user enters an email and password
+THEN the user can log in
+WHEN user is logged in
+THEN the user can make a post about a sport, movie, book or other
+WHEN the user creates a post
+THEN the user can view it from the home screen
+WHEN the user sees others post
+THEN the user can comment on it
+WHEN a user sees your post
+THEN they can comment on it
 ```
 
 ## Installation
@@ -99,3 +99,4 @@ If you have any questions about the repo, please open an issue or contact us dir
 - [Parth Patel](https://github.com/parth167)
 - [Logan Pippin](https://github.com/LoganPippin)
 - [Mario Thompson](https://github.com/MarioThompson0010)
+
