@@ -5,107 +5,35 @@
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
         <thead>
             <tr>
-                <td colspan="3" class="tcat">Stuff thats <b style='color: red;'>HOT</b> Right now!</td>
+                <td colspan="3" class="tcat center" style='background: #69D2E7'>Stuff thats <b
+                        style=' color: red;'>HOT</b> Right now!</td>
             </tr>
         </thead>
         <tbody>
-            <tr valign="top">
-                <td class="thead" align="left" width="25%"> <span id="hottest-categories">Hottest Category (in last 7
-                        days)</span> </td>
-                <td class="thead" align="left" width="50%"> <span id="latest-posts">Latest Posts</span> </td>
-            </tr>
+
             <tr valign="top" style="height:100%">
                 <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
                     <div id="top-categories">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">1&nbsp;</span>
-                                    </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/sports"
-                                            title="Name of category goes here">Sports</a></td>
-                                </tr>
-                                <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
+                                            title="Name of category goes here"
+                                            class="waves-effect  light-blue lighten-4 btn">Sports</a>
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/movies"
-                                            title="Name of category goes here">Movies</a></td>
-                                </tr>
-                                <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
+                                            title="Name of category goes here"
+                                            class="waves-effect light-blue lighten-4  btn">Movies</a>
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
-                                            title="Name of category goes here">Books</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">4&nbsp;</span>
+                                            title="Name of category goes here"
+                                            class="waves-effect light-blue lighten-4  btn">Books</a>
                                     </td>
                                     <td style="padding:1px" class="smallfont"><a href="/forum/category/other"
-                                            title="Name of category goes here">Other</a>
+                                            title="Name of category goes here"
+                                            class="waves-effect light-blue lighten-4  btn">Other</a>
                                     </td>
                                 </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </td>
-
-                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
-                    <div id="newest-posts">
-                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
-                            <tbody>
-                                {{!-- {{#each postinfo}} --}}
-                                {{!-- <tr>
-                                    <td>
-                                        {{body}}
-                                    </td>
-
-                                    <td>
-                                        {{email}}
-                                    </td>
-
-                                    <td>
-                                        {{bodyCreatedAt}}
-                                    </td>
-
-                                    <td>
-                                        {{name}}
-                                    </td>
-                                </tr> --}}
-                                {{!-- {{/each}} --}}
-                                {{#each postinfo}}
-                                <tr>
-                                    <td style="padding:1px" class="smallfont">
-                                        <a href="/forum/category/{{name}}/{{id}}" title="Post title goes here">
-                                            {{!-- {{#each posts}}
-                                            {{> members/posts-block }}
-                                            {{/each}} --}}
-                                            {{title}}
-                                        </a>
-                                    </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap">
-                                        <a href="#" title="username">
-                                            <b>
-                                                <font color="#2F4F4F">
-                                                    {{../userEmail}}
-                                                </font>
-                                            </b>
-                                        </a>
-                                        &nbsp;&nbsp;
-                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in category" class="isDisabled">►</a>
-                                    </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
-                                        title="Date/Time">
-                                        {{bodyCreatedAt}}
-                                    </td>
-                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a
-                                            href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
-                                    </td>
-
-                                </tr>
-                                {{/each}}
-
                             </tbody>
                         </table>
                     </div>
@@ -117,11 +45,78 @@
 
     <div class="spacer"></div>
 
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+        <thead>
+            <tr>
+                <td colspan="3" class="tcat center"> <b style='font-size:20px;'>All
+                        Posts</b></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr valign="top" style="height:100%">
+                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
+                    <div id="newest-posts">
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+                            {{#each postinfo}}
+                            <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <td colspan="3" class="tcat center" style='background: #69D2E7'>
+                                            <b style='font-size:16px;'>{{name}}</b>
+                                        </td>
+                                    </tr>
+                                </thead>
+                            </table>
+                            <table id="post-id" class="tborder center" cellpadding="6" cellspacing="1" border="0"
+                                width="100%">
+                                <tr>
+                                    <td class="thead" style="font-weight: normal">
+                                        {{bodyCreatedAt}}
+                                    </td>
+                                    <td class="alt1">
+                                        <b>{{title}}</b>
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td class="alt2" width="200">
+                                        <div id="user-profile">
+                                            <center>
+                                                <a class="bigusername" rel="nofollow" href="#">
+                                                    {{../userEmail}}</a>
+                                                <hr>
+                                            </center>
+                                        </div>
+                                        <div class="smallfont">
+                                            <br />
+                                            <center>
+                                                <img src="https://via.placeholder.com/150" alt="user's Avatar"
+                                                    border="1" title="user's Avatar" />
+                                            </center>
+                                        </div>
+                                    </td>
+                                    <td class="alt1" id="post_message">
+                                        <div id="post_message">
+                                            {{body}}
+                                        </div>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <br>
+                            {{/each}}
+                        </table>
+                        <br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="spacer"></div>
     <div style="padding-bottom:15px">
-        <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
+        <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
             <thead>
                 <tr>
-                    <td class="tcat" colspan="0">
+                    <td class="tcat" style='background: #69D2E7' colspan="0">
                         <span class="smallfont"><strong>» <a href="#">Search
                                     Forums</a></strong></span>
                     </td>
