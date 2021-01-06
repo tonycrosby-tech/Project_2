@@ -3,6 +3,7 @@ const path = require('path');
 const db = require('../../models');
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require('../../config/middleware/isAuthenticated');
+
 // const router = require('express').Router();
 module.exports = function (app) {
   app.get('/', (req, res) => {
@@ -293,18 +294,38 @@ module.exports = function (app) {
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
+      const allComments = [];
+      const info = [];
+
+      dbPost.Comments.forEach((element) => {
+        const hbssObj = {
+          author: _req.user.email,
+          body: element.dataValues.body
+        };
+
+        allComments.push(hbssObj);
+      });
+
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
         author: dbPost.User.dataValues.email,
-        userEmail: _req.user.email
+        userEmail: _req.user.email,
+        postId: dbPost.dataValues.id
       };
 
-      console.log(hbsObj);
+      info.push(hbsObj);
 
-      res.render('single-post', hbsObj);
+      const sendobj = {
+        Comments: allComments,
+        postInfo: info
+      };
+
+      console.log(sendobj);
+
+      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/sports/:id', isAuthenticated, (_req, res) => {
@@ -314,18 +335,38 @@ module.exports = function (app) {
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
+      const allComments = [];
+      const info = [];
+
+      dbPost.Comments.forEach((element) => {
+        const hbssObj = {
+          author: _req.user.email,
+          body: element.dataValues.body
+        };
+
+        allComments.push(hbssObj);
+      });
+
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
         author: dbPost.User.dataValues.email,
-        userEmail: _req.user.email
+        userEmail: _req.user.email,
+        postId: dbPost.dataValues.id
       };
 
-      console.log(hbsObj);
+      info.push(hbsObj);
 
-      res.render('single-post', hbsObj);
+      const sendobj = {
+        Comments: allComments,
+        postInfo: info
+      };
+
+      console.log(sendobj);
+
+      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/movies/:id', isAuthenticated, (_req, res) => {
@@ -335,18 +376,38 @@ module.exports = function (app) {
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
+      const allComments = [];
+      const info = [];
+
+      dbPost.Comments.forEach((element) => {
+        const hbssObj = {
+          author: _req.user.email,
+          body: element.dataValues.body
+        };
+
+        allComments.push(hbssObj);
+      });
+
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
         name: dbPost.Category.dataValues.name,
         author: dbPost.User.dataValues.email,
-        userEmail: _req.user.email
+        userEmail: _req.user.email,
+        postId: dbPost.dataValues.id
       };
 
-      console.log(hbsObj);
+      info.push(hbsObj);
 
-      res.render('single-post', hbsObj);
+      const sendobj = {
+        Comments: allComments,
+        postInfo: info
+      };
+
+      console.log(sendobj);
+
+      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/books/:id', isAuthenticated, (_req, res) => {
@@ -356,19 +417,38 @@ module.exports = function (app) {
       limit: 10,
       order: [[db.sequelize.col('updatedAt'), 'DESC']]
     }).then(function (dbPost) {
+      const allComments = [];
+      const info = [];
+
+      dbPost.Comments.forEach((element) => {
+        const hbssObj = {
+          author: _req.user.email,
+          body: element.dataValues.body
+        };
+
+        allComments.push(hbssObj);
+      });
+
       const hbsObj = {
         title: dbPost.dataValues.title,
         body: dbPost.dataValues.body,
         bodyCreatedAt: dbPost.dataValues.createdAt,
-        bodyUpdatedAt: dbPost.dataValues.updatedAt,
         name: dbPost.Category.dataValues.name,
         author: dbPost.User.dataValues.email,
-        userEmail: _req.user.email
+        userEmail: _req.user.email,
+        postId: dbPost.dataValues.id
       };
 
-      console.log(hbsObj);
+      info.push(hbsObj);
 
-      res.render('single-post', hbsObj);
+      const sendobj = {
+        Comments: allComments,
+        postInfo: info
+      };
+
+      console.log(sendobj);
+
+      res.render('single-post', sendobj);
     });
   });
 

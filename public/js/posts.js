@@ -15,6 +15,7 @@ $(document).ready(() => {
       body: usersPosting.val().trim()
     };
 
+    console.log(selectedCat);
     console.log(sendPostToServer);
 
     if (
