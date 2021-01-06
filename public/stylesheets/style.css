@@ -211,3 +211,8 @@ main {
     word-wrap:break-word;
   }
 }
+
+.comment-section {
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0
+}
