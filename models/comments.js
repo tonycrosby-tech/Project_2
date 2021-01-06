@@ -1,18 +1,18 @@
-module.exports = function (sequelize, DataTypes) {
-  const Comments = sequelize.define('Comments', {
+module.exports = function(sequelize, DataTypes) {
+  const Comments = sequelize.define("Comments", {
     body: {
       type: DataTypes.TEXT,
       allowNull: false,
-      validate: { len: [1] }
-    }
+      validate: { len: [1] },
+    },
   });
 
-  Comments.associate = function (models) {
+  Comments.associate = function(models) {
     Comments.belongsTo(models.User, {
-      foreignKey: { allowNull: false }
+      foreignKey: { allowNull: false },
     });
     Comments.belongsTo(models.Post, {
-      foreignKey: { allowNull: true }
+      foreignKey: { allowNull: false },
     });
   };
 
