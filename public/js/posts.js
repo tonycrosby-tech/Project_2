@@ -35,3 +35,7 @@ $(document).ready(() => {
       });
   });
 });
+
+$(document).ready(function () {
+  $('textarea#titlePost, textarea#usersPosting').characterCounter();
+});
