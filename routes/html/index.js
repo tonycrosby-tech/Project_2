@@ -297,13 +297,19 @@ module.exports = function (app) {
       const allComments = [];
       const info = [];
 
-      dbPost.Comments.forEach((element) => {
-        const hbssObj = {
-          author: _req.user.email,
-          body: element.dataValues.body
-        };
+      db.Comments.findAll({
+        include: [db.User, db.Post],
+        where: { postId: _req.params.id },
+        order: [[db.sequelize.col('updatedAt'), 'DESC']]
+      }).then(function (dbComments) {
+        dbComments.forEach((element) => {
+          const hbssObj = {
+            author: element.User.dataValues.email,
+            body: element.dataValues.body
+          };
 
-        allComments.push(hbssObj);
+          allComments.push(hbssObj);
+        });
       });
 
       const hbsObj = {
@@ -338,13 +344,19 @@ module.exports = function (app) {
       const allComments = [];
       const info = [];
 
-      dbPost.Comments.forEach((element) => {
-        const hbssObj = {
-          author: _req.user.email,
-          body: element.dataValues.body
-        };
+      db.Comments.findAll({
+        include: [db.User, db.Post],
+        where: { postId: _req.params.id },
+        order: [[db.sequelize.col('updatedAt'), 'DESC']]
+      }).then(function (dbComments) {
+        dbComments.forEach((element) => {
+          const hbssObj = {
+            author: element.User.dataValues.email,
+            body: element.dataValues.body
+          };
 
-        allComments.push(hbssObj);
+          allComments.push(hbssObj);
+        });
       });
 
       const hbsObj = {
@@ -379,13 +391,19 @@ module.exports = function (app) {
       const allComments = [];
       const info = [];
 
-      dbPost.Comments.forEach((element) => {
-        const hbssObj = {
-          author: _req.user.email,
-          body: element.dataValues.body
-        };
+      db.Comments.findAll({
+        include: [db.User, db.Post],
+        where: { postId: _req.params.id },
+        order: [[db.sequelize.col('updatedAt'), 'DESC']]
+      }).then(function (dbComments) {
+        dbComments.forEach((element) => {
+          const hbssObj = {
+            author: element.User.dataValues.email,
+            body: element.dataValues.body
+          };
 
-        allComments.push(hbssObj);
+          allComments.push(hbssObj);
+        });
       });
 
       const hbsObj = {
@@ -422,13 +440,19 @@ module.exports = function (app) {
       const allComments = [];
       const info = [];
 
-      dbPost.Comments.forEach((element) => {
-        const hbssObj = {
-          author: _req.user.email,
-          body: element.dataValues.body
-        };
+      db.Comments.findAll({
+        include: [db.User, db.Post],
+        where: { postId: _req.params.id },
+        order: [[db.sequelize.col('updatedAt'), 'DESC']]
+      }).then(function (dbComments) {
+        dbComments.forEach((element) => {
+          const hbssObj = {
+            author: element.User.dataValues.email,
+            body: element.dataValues.body
+          };
 
-        allComments.push(hbssObj);
+          allComments.push(hbssObj);
+        });
       });
 
       const hbsObj = {
