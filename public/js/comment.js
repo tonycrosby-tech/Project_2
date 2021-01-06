@@ -29,3 +29,7 @@ createComment.on('click', (event) => {
       console.log(err);
     });
 });
+
+$(document).ready(function () {
+  $('textarea#comments').characterCounter();
+});

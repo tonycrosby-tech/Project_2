@@ -4,7 +4,7 @@
 
 ## Description
 
-- Whatchamacallit is a mobile-responsive forum where users from all around the world can post and comment about books, movies,sports, and/or other.
+- Whatchamacallit is a mobile-responsive forum where users from all around the world can post and comment about books, movies, sports, and/or other.
 - User is able to visit the deployed website and is prompted to sign up or log in. Once logged in, the user is able to submit a post about a sport, movie, book, (or other).
 - Once the user-generated post/commit is submitted to the database, it is then posted on the home page.
 
@@ -23,16 +23,16 @@
 
 ```
 AS A user
-WHEN I enters an email and password
-THEN I can log in
-WHEN I loged in
-THEN I can make a post about a sport, movie,  book or other
-WHEN I creates a post
-THEN I can view it on the home screen
-WHEN I sees others  post
-THEN I can comment on it
-WHEN others sees my  post
-THEN They can comment on it
+WHEN a user enters an email and password
+THEN the user can log in
+WHEN user is logged in
+THEN the user can make a post about a sport, movie, book or other
+WHEN the user creates a post
+THEN the user can view it from the home screen
+WHEN the user sees others post
+THEN the user can comment on it
+WHEN a user sees your post
+THEN they can comment on it
 ```
 
 ## Installation
@@ -47,18 +47,18 @@ npm i
 
 Visit the website (linked below) sign up or log in, and start submitting crimes!
 
-- ![login]()
-- this screenshots is login page of WhatChaMaCallIt
-- ![home]()
-- this screenshots is homescreen page of WhatChaMaCallIt
-- ![forum]()
-- this screenshots is forum page of WhatChaMaCallIt
-- ![creat-post]()
-- this screenshots is creat-post page of WhatChaMaCallIt,where user crest post
-- ![home-with post]()
-- this screenshots is home-with post page of WhatChaMaCallIt
-- ![commit]()
-- this screenshots is post page of WhatChaMaCallIt with commit
+- this screenshot is login page of WhatChaMaCallIt
+- ![login](public/images/login.png)
+- this screenshot is homescreen page of WhatChaMaCallIt
+- ![home](public/images/home.png)
+- this screenshot is forum page of WhatChaMaCallIt
+- ![forum](public/images/forum.png)
+- this screenshot is create-post page of WhatChaMaCallIt, where user creates post
+- ![create-post](public/images/create-post.png)
+- this screenshot is home-with post page of WhatChaMaCallIt
+- ![home-with post](public/images/home-posts.png)
+- this screenshot is post page of WhatChaMaCallIt with comment
+- ![commit](public/images/comments.png)
 
 ## Deployed Website
 
