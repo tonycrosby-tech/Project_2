@@ -371,15 +371,8 @@ module.exports = function (app) {
       res.render('single-post', hbsObj);
     });
   });
-<<<<<<< HEAD
-
-  app.use(function (req, res) {
+  app.use(function (req,res) {
     res.status(404);
-
-=======
-  app.use(function (req, res) {
-    res.status(404);
->>>>>>> e4e720f7d12af12489f9ba774cfa858453261392
     // respond with html page
     if (req.accepts('html')) {
       res.render('404', { url: req.url });
@@ -390,10 +383,6 @@ module.exports = function (app) {
       res.send({ error: 'Not found' });
       return;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> e4e720f7d12af12489f9ba774cfa858453261392
     // default to plain-text. send()
     res.type('txt').send('Not found');
   });
