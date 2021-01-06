@@ -62,11 +62,11 @@ Visit the website (linked below) sign up or log in, and start submitting crimes!
 
 ## Deployed Website
 
-[WhatChaMaCallIt]()
+[WhatChaMaCallIt](https://fullstackbc-project-02.herokuapp.com/)
 
 ## Repository
 
-[WhatChaMaCallIt](https://github.com/tonycrosby-tech/Project_2.git)
+[WhatChaMaCallIt](https://github.com/tonycrosby-tech/Project_2)
 
 ## Future Development
 
@@ -75,7 +75,7 @@ Visit the website (linked below) sign up or log in, and start submitting crimes!
 - Search for popular posts.
 - Popup ads--advertisers seeking to sell either a movie, book, or sporting event.
 - Make a check to see if password is longer than 6 characters (password strength).
-- Ability to choose profile images,social media link, app theme depending on the user.
+- Ability to update user profile with images,social media link, also can change app theme (darker).
 
 ## Technology Used
 
