@@ -47,18 +47,18 @@ npm i
 
 Visit the website (linked below) sign up or log in, and start submitting crimes!
 
-- ![login]()
-- this screenshots is login page of WhatChaMaCallIt
-- ![home]()
-- this screenshots is homescreen page of WhatChaMaCallIt
-- ![forum]()
-- this screenshots is forum page of WhatChaMaCallIt
-- ![creat-post]()
-- this screenshots is creat-post page of WhatChaMaCallIt,where user crest post
-- ![home-with post]()
-- this screenshots is home-with post page of WhatChaMaCallIt
-- ![commit]()
-- this screenshots is post page of WhatChaMaCallIt with commit
+- this screenshot is login page of WhatChaMaCallIt
+- ![login](public\images\login.png)
+- this screenshot is homescreen page of WhatChaMaCallIt
+- ![home](public\images\home.png)
+- this screenshot is forum page of WhatChaMaCallIt
+- ![forum](public\images\forum.png)
+- this screenshot is creat-post page of WhatChaMaCallIt,where user crest post
+- ![creat-post](public\images\create-post.png)
+- this screenshot is home-with post page of WhatChaMaCallIt
+- ![home-with post](public\images\home-posts.png)
+- this screenshot is post page of WhatChaMaCallIt with comment
+- ![commit](public\images\comments.png)
 
 ## Deployed Website
 
@@ -99,4 +99,3 @@ If you have any questions about the repo, please open an issue or contact us dir
 - [Parth Patel](https://github.com/parth167)
 - [Logan Pippin](https://github.com/LoganPippin)
 - [Mario Thompson](https://github.com/MarioThompson0010)
-
