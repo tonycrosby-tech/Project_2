@@ -42,11 +42,7 @@ li {
   color: #0b2943;
   text-decoration: none;
 }
-.tcat a:visited,
-.tcat_avisited {
-  color: #0b2943;
-  text-decoration: none;
-}
+
 .tcat a:hover,
 .tcat a:active,
 .tcat_ahover {
@@ -63,10 +59,6 @@ li {
 .thead_alink {
   color: #0b2943;
 }
-.thead a:visited,
-.thead_avisited {
-  color: #0b2943;
-}
 .thead a:hover,
 .thead a:active,
 .thead_ahover {
@@ -76,14 +68,12 @@ li {
   background: #ededed;
   color: #0b2943;
 }
+
 .tfoot a:link,
 .tfoot_alink {
   color: #0b2943;
 }
-.tfoot a:visited,
-.tfoot_avisited {
-  color: #0b2943;
-}
+
 .tfoot a:hover,
 .tfoot a:active,
 .tfoot_ahover {
@@ -130,16 +120,13 @@ nav ul a {
   font-size: 10px;
 }
 
-.footerLinks li a,
-.footerLinks a:visited {
+.footerLinks li a {
   color: #888;
   letter-spacing: 0.5px;
   font-size: 16px;
   padding: 3px;
 }
-.footerLinks li,
-.footerLinks a,
-.footerLinks a:visited {
+.footerLinks li {
   line-height: 17px;
 }
 .pageContent {
