@@ -371,8 +371,7 @@ module.exports = function (app) {
       res.render('single-post', hbsObj);
     });
   });
-
-  app.use(function(req,res){
+  app.use(function (req, res) {
     res.status(404);
     // respond with html page
     if (req.accepts('html')) {
@@ -384,6 +383,7 @@ module.exports = function (app) {
       res.send({ error: 'Not found' });
       return;
     }
+
     // default to plain-text. send()
     res.type('txt').send('Not found');
   });
