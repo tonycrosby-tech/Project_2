@@ -15,12 +15,12 @@ body {
 }
 a:link,
 body_alink {
-  color: #d1dee7;
+  color: #555555;
 }
 a:hover,
 a:active,
 body_ahover {
-  color: #4f5459;
+  color: #68aff7;
 }
 td,
 th,
