@@ -55,32 +55,10 @@
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
 
                             <tbody>
-                                {{!-- {{#each postinfo}} --}}
-                                {{!-- <tr>
-                                    <td>
-                                        {{body}}
-                                    </td>
-
-                                    <td>
-                                        {{email}}
-                                    </td>
-
-                                    <td>
-                                        {{bodyCreatedAt}}
-                                    </td>
-
-                                    <td>
-                                        {{name}}
-                                    </td>
-                                </tr> --}}
-                                {{!-- {{/each}} --}}
                                 {{#each postinfo}}
                                 <tr>
                                     <td style="padding:1px" class="smallfont tbody responsive-table">
                                         <a href="/forum/category/{{name}}/{{id}}" title="Post title goes here">
-                                            {{!-- {{#each posts}}
-                                            {{> members/posts-block }}
-                                            {{/each}} --}}
                                             {{title}}
                                         </a>
                                         <a href="#" title="username">
@@ -109,27 +87,4 @@
     </table>
 
     <div class="spacer"></div>
-    {{!--
-    <div style="padding-bottom:15px">
-        <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
-            <thead>
-                <tr>
-                    <td class="tcat" colspan="0">
-                        <span class="smallfont"><strong>» <a href="#">Search
-                                    Forums</a></strong></span>
-                    </td>
-                </tr>
-            </thead>
-            <tbody id="search-input">
-                <tr>
-                    <td class="alt2">
-                        <input class="bginput" name="query" size="13" type="text"> <input type="submit" class="button"
-                            value="Go">
-                        <div class="smallfont">» <a href="#">Advanced Search</a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div> --}}
 </div>
