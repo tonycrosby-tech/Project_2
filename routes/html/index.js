@@ -305,6 +305,7 @@ module.exports = function (app) {
         dbComments.forEach((element) => {
           const hbssObj = {
             author: element.User.dataValues.email,
+            bodyCreatedAt: element.dataValues.createdAt,
             body: element.dataValues.body
           };
 
@@ -352,6 +353,7 @@ module.exports = function (app) {
         dbComments.forEach((element) => {
           const hbssObj = {
             author: element.User.dataValues.email,
+            bodyCreatedAt: element.dataValues.createdAt,
             body: element.dataValues.body
           };
 
@@ -399,6 +401,7 @@ module.exports = function (app) {
         dbComments.forEach((element) => {
           const hbssObj = {
             author: element.User.dataValues.email,
+            bodyCreatedAt: element.dataValues.createdAt,
             body: element.dataValues.body
           };
 
@@ -448,6 +451,7 @@ module.exports = function (app) {
         dbComments.forEach((element) => {
           const hbssObj = {
             author: element.User.dataValues.email,
+            bodyCreatedAt: element.dataValues.createdAt,
             body: element.dataValues.body
           };
 

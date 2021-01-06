@@ -187,32 +187,32 @@ main {
 @media (max-width: 576px) {
   .break-words {
     table-layout: fixed;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
 @media (max-width: 768px) {
   .break-words {
     table-layout: fixed;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
 @media (max-width: 992px) {
   .break-words {
     table-layout: fixed;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
 @media (max-width: 1200px) {
   .break-words {
     table-layout: fixed;
-    word-wrap:break-word;
+    word-wrap: break-word;
   }
 }
 
 .comment-section {
   line-height: 110%;
-  margin: 2.8rem 0 1.68rem 0
+  margin: 2.8rem 0 1.68rem 0;
 }
