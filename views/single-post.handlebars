@@ -15,7 +15,7 @@
             </thead>
         </table>
 
-        <table id="post-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+        <table id="post-id" class="tborder center break-words" cellpadding="6" cellspacing="1" border="0" width="100%">
             <tbody>
                 <tr>
                     <td class="thead" style="font-weight: normal">
@@ -43,60 +43,68 @@
                     </td>
                     <td class="alt1" id="post_message">
 
-    <div class="container">
-        <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-            <thead>
+                        <div id="post_message">
+                            <p>{{body}}</p>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="spacer"></div>
+        <button class="btn blue lighten-4 waves-effect waves-light right" type="submit" id='reply-button' name="action">Reply
+            <i class="material-icons right">send</i>
+        </button>
+        <div class="spacer"></div>
+    </div>
+    <br><br>
+    <table class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
+        <thead>
+            <tr>
+                <td colspan="3" class="tcat center">
+                    <b style='font-size:16px;'>Comments</b>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <br />
+    <hr>
+    <div class="comment-setup" style="padding: 0px 0px 6px 0px">
+        <br />
+        <table id="comment-id" class="tborder center break-words" cellpadding="6" cellspacing="1" border="0"
+            width="100%">
+            <tbody>
                 <tr>
-                    <td colspan="3" class="tcat center">
-                        <b style='font-size:16px;'>Comments</b>
+                    <td class="thead" style="font-weight: normal;">
+                        updatedat:
+                    </td>
+                    <td class="alt1">
+                        <b>title</b>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="alt2" width="200">
+                        <div id="user-profile">
+                            <center>
+                                <a class="bigusername" rel="nofollow" href="#">email here</a>
+                                <hr>
+                            </center>
+                        </div>
+                        <div class="smallfont">
+                            <br />
+                            <center>
+                                <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar"
+                                    border="1" title="user's Avatar" />
+                            </center>
+                        </div>
+                    </td>
+                    <td class="alt1" id="comment">
+                        <div id="comment_message">
+                            <p>comment here</p>
+                        </div>
                     </td>
                 </tr>
             </tbody>
         </table>
         <br />
     </div>
-
-    <div class="container">
-
-        <div class="comment-setup" style="padding: 0px 0px 6px 0px">
-            <br />
-
-            <table id="comment-id" class="tborder center" cellpadding="6" cellspacing="1" border="0" width="100%">
-                <tbody>
-                    <tr>
-                        <td class="thead" style="font-weight: normal">
-                            {{bodyUpdatedAt}}
-                            </td>
-                        <td class="alt1">
-                            <b>{{title}}</b>
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <td class="alt2" width="200">
-                            <div id="user-profile">
-                                <center>
-                                    <a class="bigusername" rel="nofollow" href="#">{{userEmail}}</a>
-                                    <hr>
-                                </center>
-                            </div>
-                            <div class="smallfont">
-                                <br />
-                                <center>
-                                    <img class='user-profile-pic' src="/images/default-profile-pic.jpg" alt="user's Avatar" border="1"
-                                        title="user's Avatar" />
-                                </center>
-                            </div>
-                        </td>
-                        <td class="alt1" id="comment">
-
-                            <div id="comment_message">
-                                comment
-                            </div>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <br />
-        </div>
-    </div>
+</div>
