@@ -4,7 +4,8 @@ form.login {
 }
 
 body {
-  background: #f0f1f3;
+  background-image: url("/images/funky-lines.png");
+
   color: #26353f;
   font: 16px verdana, sans-serif;
   margin-top: 0;
@@ -14,12 +15,12 @@ body {
 }
 a:link,
 body_alink {
-  color: #d1dee7;
+  color: #555555;
 }
 a:hover,
 a:active,
 body_ahover {
-  color: #4f5459;
+  color: #68aff7;
 }
 td,
 th,
@@ -41,11 +42,7 @@ li {
   color: #0b2943;
   text-decoration: none;
 }
-.tcat a:visited,
-.tcat_avisited {
-  color: #0b2943;
-  text-decoration: none;
-}
+
 .tcat a:hover,
 .tcat a:active,
 .tcat_ahover {
@@ -62,10 +59,6 @@ li {
 .thead_alink {
   color: #0b2943;
 }
-.thead a:visited,
-.thead_avisited {
-  color: #0b2943;
-}
 .thead a:hover,
 .thead a:active,
 .thead_ahover {
@@ -75,14 +68,12 @@ li {
   background: #ededed;
   color: #0b2943;
 }
+
 .tfoot a:link,
 .tfoot_alink {
   color: #0b2943;
 }
-.tfoot a:visited,
-.tfoot_avisited {
-  color: #0b2943;
-}
+
 .tfoot a:hover,
 .tfoot a:active,
 .tfoot_ahover {
@@ -116,7 +107,7 @@ table {
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 1px;
-  border-color: grey;
+  border-color: rgb(75, 74, 74);
 }
 
 nav ul a {
@@ -129,16 +120,13 @@ nav ul a {
   font-size: 10px;
 }
 
-.footerLinks li a,
-.footerLinks a:visited {
+.footerLinks li a {
   color: #888;
   letter-spacing: 0.5px;
   font-size: 16px;
   padding: 3px;
 }
-.footerLinks li,
-.footerLinks a,
-.footerLinks a:visited {
+.footerLinks li {
   line-height: 17px;
 }
 .pageContent {
@@ -147,7 +135,9 @@ nav ul a {
   border-radius: 0;
   font-size: 16px;
 }
-
+.page-footer {
+  background-image: url("/images/funky-lines.png");
+}
 body {
   display: flex;
   min-height: 100vh;
@@ -164,5 +154,65 @@ main {
 }
 
 .hidden {
-    display:none;
+  display: none;
+}
+.isDisabled {
+  color: currentColor;
+  cursor: not-allowed;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+@media (max-width: 576px) {
+  .scrollit {
+    height: 286px;
+    width: 372px;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 576px) {
+  .truncate2 {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.user-profile-pic {
+  height: 150px;
+  width: 150px;
+}
+
+@media (max-width: 576px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 768px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 992px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 1200px) {
+  .break-words {
+    table-layout: fixed;
+    word-wrap: break-word;
+  }
+}
+
+.comment-section {
+  line-height: 110%;
+  margin: 2.8rem 0 1.68rem 0;
 }

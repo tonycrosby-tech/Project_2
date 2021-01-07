@@ -3,53 +3,6 @@
 <div class="container">
 
     <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
-        <tbody>
-            <tr>
-                <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
-                    </b>-
-                    This is where the magic Happens!
-                </td>
-            </tr>
-            <tr>
-                <td class="alt1" colspan="6">
-                    <center>
-                        WhatChaMaCallIt is a brand new forum! :)
-                        {{!-- {{#each categories}}
-                        {{> members/categories-block}}
-                        {{/each}}
-                        Posts: 0{{#each posts}}
-                        {{> members/posts-block}}
-                        {{/each}}
-                        Members: 0{{#each users}}
-                        {{> members/users-block}}
-                        {{/each}} --}}
-
-
-
-                        {{!-- <br><br>categories:
-
-
-                        ,
-                        Posts:
-
-                        , Members: --}}
-
-
-
-                        <br><br>
-                        If you have a complaint, feedback, or an issue, then please contact us on github by clicking
-                        this
-                        link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
-                            <font color="blue"><b>Contact us</b></font>
-                        </a>
-                    </center>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="spacer"></div>
-
-    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
         <thead>
             <tr>
                 <td colspan="3" class="tcat">Stuff thats <b style='color: red;'>HOT</b> Right now!</td>
@@ -62,92 +15,65 @@
                 <td class="thead" align="left" width="50%"> <span id="latest-posts">Latest Posts</span> </td>
             </tr>
             <tr valign="top" style="height:100%">
-                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
+                <td class="alt2">
                     <div id="top-categories">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
                             <tbody>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">1&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">1&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/sports"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/sports"
                                             title="Name of category goes here">Sports</a></td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">2&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">2&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/movies"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/movies"
                                             title="Name of category goes here">Movies</a></td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
                                 </tr>
                                 <tr>
-                                    <td height="15px" width="1%" align="center"><span class="smallfont">3&nbsp;</span>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">3&nbsp;</span>
                                     </td>
-                                    <td style="padding:1px" class="smallfont"><a href="/forum/category/books"
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/books"
                                             title="Name of category goes here">Books</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="right">0</td>
+                                </tr>
+                                <tr>
+                                    <td height="15px" width="1%" align="center"><span class="smallfont tbody">4&nbsp;</span>
+                                    </td>
+                                    <td style="padding:1px" class="smallfont tbody"><a href="/forum/category/other"
+                                            title="Name of category goes here">Other</a>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </td>
 
-                <td class="alt2" style="padding:3px;margin:0px;border-width:0px;">
+                <td class="alt2">
                     <div id="newest-posts">
                         <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+
                             <tbody>
-                                {{!-- {{#each postinfo}} --}}
-                                {{!-- <tr>
-                                    <td>
-                                        {{body}}
-                                    </td>
-
-                                     <td>
-                                        {{email}}
-                                    </td>
-
-                                     <td>
-                                        {{bodyCreatedAt}}
-                                    </td>
-
-                                     <td>
-                                        {{name}}
-                                    </td>
-                                </tr> --}}
-                                {{!-- {{/each}} --}}
                                 {{#each postinfo}}
                                 <tr>
-                                    <td style="padding:1px" class="smallfont">
-                                        <a href="#"
-                                            title="Post title goes here">
-                                            {{!-- {{#each posts}}
-                                            {{> members/posts-block }}
-                                            {{/each}} --}}
-                                            {{body}}
-                                            </a>
-                                    </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap">
-                                        <a href="#"
-                                          title="username">
+                                    <td style="padding:1px" class="smallfont tbody">
+                                        <a href="/forum/category/{{name}}/{{id}}" title="Post title goes here">
+                                            {{title}}
+                                        </a>
+                                        <a href="#" title="username">
                                             <b>
-                                                <font color="#2F4F4F"> 
-                                                    {{email}} 
+                                                <font color="#2F4F4F">
+                                                    {{author}}
                                                 </font>
                                             </b>
                                         </a>
-                                        &nbsp;&nbsp;
-                                         <a href="/forum/category/{{name}}" style="text-decoration:none;font-family:Arial;font-size:8px"
-                                            title="Jump to first unread post in category">►</a> 
-                                    </td>
-                                    <td style="padding:1px" class="smallfont" align="center" nowrap="nowrap"
-                                        title="Date/Time">
+                                        &nbsp;
+                                        <a href="#" style="text-decoration:none;font-family:Arial;font-size:8px" title="Jump to first unread post in category" class="isDisabled">►</a>
                                         {{bodyCreatedAt}}
+                                        <a
+                                            href="/forum/category/{{name}}" title="Category goes here">{{name}}</a>
                                     </td>
-                                    <td style="padding:1px" class="smallfont" align="right" nowrap="nowrap"><a href="/forum/category/{{name}}"
-                                            title="Category goes here">{{name}}</a>
-                                    </td>
-
                                 </tr>
                                 {{/each}}
 
@@ -156,38 +82,6 @@
                     </div>
                 </td>
             </tr>
-
-            <tr>
-                <td class="thead" colspan="3">
-                    <span id="data-status">Fetching data in 60 seconds.</span>
-                </td>
-            </tr>
-
         </tbody>
     </table>
-
-    <div class="spacer"></div>
-
-    <div style="padding-bottom:15px">
-        <table align="center" border="0" cellpadding="6" cellspacing="1" class="tborder" width="100%">
-            <thead>
-                <tr>
-                    <td class="tcat" colspan="0">
-                        <span class="smallfont"><strong>» <a href="#">Search
-                                    Forums</a></strong></span>
-                    </td>
-                </tr>
-            </thead>
-            <tbody id="search-input">
-                <tr>
-                    <td class="alt2">
-                        <input class="bginput" name="query" size="13" type="text"> <input type="submit" class="button"
-                            value="Go">
-                        <div class="smallfont">» <a href="#">Advanced Search</a>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </div>

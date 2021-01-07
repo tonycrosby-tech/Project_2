@@ -41,23 +41,86 @@
     <li><a href="/logout"> Logout </a></li>
   </ul>
 
+  <div class="spacer"></div>
+
+  <div class="container">
+
+    <table class="tborder" cellpadding="6" cellspacing="1" border="0" width="100%" align="center">
+      <tbody>
+        <tr>
+          <td class="tcat center" colspan="6">Welcome to WhatChaMaCallIt <b style="color: red;"> {{ userEmail }}
+            </b>-
+            This is where the magic Happens!
+            <br><br>
+            <div id="root"></div>
+          </td>
+        </tr>
+        <tr>
+          <td class="alt1" colspan="6">
+            <center>
+              WhatChaMaCallIt is a brand new forum! :)
+              {{!-- {{#each categories}}
+              {{> members/categories-block}}
+              {{/each}}
+              Posts: 0{{#each posts}}
+              {{> members/posts-block}}
+              {{/each}}
+              Members: 0{{#each users}}
+              {{> members/users-block}}
+              {{/each}} --}}
+
+
+
+              {{!-- <br><br>categories:
+
+
+              ,
+              Posts:
+
+              , Members: --}}
+
+
+
+              <br><br>
+              If you have a complaint, feedback, or an issue, then please contact us on github by clicking
+              this
+              link: <a rel="nofollow" href="https://github.com/tonycrosby-tech/Project_2">
+                <font color="blue"><b>Contact us</b></font>
+              </a>
+            </center>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="spacer"></div>
+
   {{{ body }}}
 
   <div class="spacer"></div>
 
-  <footer style='background:#f0f1f3' class="page-footer">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 style='border:solid; border-color:black; border-width: 1px' class="blue darken-4 center">
-            <b>WhatChaMaCallIt</b></h5>
-          <hr>
-          <center class="black-text text-lighten-4">This forum was created by Tony Crosby,
-            Parth Patel, Logan Pippin and Mario
-            Thompson.</center>
+          <h5 style='border:solid; border-color:black; border-width: 1px ;background: #69D2E7'
+            class="blue darken-4 center">
+            <b>WhatChaMaCallIt Created By</b>
+          </h5>
+
+          <ul class="black-text text-lighten-4 center">
+            <li><b><a href='https://github.com/tonycrosby-tech'>Tony Crosby</a></b></li>
+            <hr>
+            <li><b><a href="https://github.com/parth167">Parth Patel</a></b></li>
+            <hr>
+            <li><b><a href="https://github.com/LoganPippin">Logan Pippin</a></b></li>
+            <hr>
+            <li><b><a href="https://github.com/MarioThompson0010">Mario Thompson</a></b></li>
+          </ul>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 style='border:solid; border-color:black; border-width: 1px' class="blue darken-4 center"><b>Links</b></h5>
+          <h5 style='border:solid; border-color:black; border-width: 1px;background: #69D2E7'
+            class="blue darken-4 center"><b>Links</b></h5>
           <ul>
             <li><a class="black-text" href="/members">Home</a></li>
             <hr>
@@ -87,6 +150,23 @@
     $(document).ready(function () {
       $('select').formSelect();
     });
+  </script>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function tick() {
+      const element = (
+        <div>
+          <b>Current Time: </b>
+          <b>{new Date().toLocaleTimeString()}.</b>
+          <b> (CST)</b>
+        </div>
+      );
+      // highlight-next-line
+      ReactDOM.render(element, document.getElementById("root"));
+    }
+    setInterval(tick, 0);
   </script>
 </body>
 

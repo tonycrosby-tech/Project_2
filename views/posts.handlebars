@@ -1,39 +1,31 @@
-<div class="main container row">
+<div class="container">
     <div id="" class="col m12">
-        <h3 class='center'>Welcome <b style="color: red;"> {{ userEmail }} </b></h3>
+        <h5 class="center">Create A Post</h5>
         <br>
-        <br>
-        <h5 class="center">Create Posts</h5>
-        <hr>
-        <br>
-        <form id="formCreatePost">
-            <h6>Select Categories:</h6>
-            <select id='myCategories'>
-                <option value="" disabled selected>Categories</option>
-                {{#each categories}}
-                {{> categories/categories-block}}
-                {{/each}}
-                {{!-- <option value="1">Sports</option>
-                <option value="2">Movies</option>
-                <option value="3">Food</option> --}}
-            </select>
-            <div class="row">
-                <div class="col s12">
-                    <label for="usersPosting">Title:<textarea id="titlePost"
-                            class="materialize-textarea"></textarea></label>
+        <div class="container">
+            <form id="formCreatePost">
+                <h6>Select Categories:</h6>
+                <select id='myCategories'>
+                    <option value="" disabled selected>Categories</option>
+                    {{#each categories}}
+                    {{> categories/categories-block}}
+                    {{/each}}
+                </select>
+                <div class="row">
+                    <div class="col s12">
+                        <label for="usersPosting">Title:  (35) <textarea placeholder='Enter a title for your post here' id="titlePost"
+                                class="materialize-textarea" data-length="35" ></textarea></label>
+                    </div>
+                    <div class="col s12">
+                        <label>Write your post here  (500)<textarea id="usersPosting" placeholder='Enter a description for your post here'
+                                class="materialize-textarea" data-length="500"></textarea></label>
+                    </div>
                 </div>
-                <div class="col s12">
-                    <label>Write your post here<textarea id="usersPosting"
-                            class="materialize-textarea"></textarea></label>
-                </div>
-            </div>
 
-        </form>
-        <button type="button" class="btn waves-effect waves-light blue darken-4 create-post"
-            id="createPost">Create</button>
-
+            </form>
+            <button type="button" class="btn waves-effect waves-light blue darken-4 create-post"
+                id="createPost">Create</button>
+        </div>
     </div>
-
 </div>
-
 <script src="/js/posts.js"></script>
