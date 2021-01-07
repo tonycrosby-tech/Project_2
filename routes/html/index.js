@@ -310,16 +310,15 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
-
-          const sendobj = {
-            Comments: allComments,
-            postInfo: info
-          };
-
-          console.log(sendobj);
-
-          res.render('single-post', sendobj);
         });
+        const sendobj = {
+          Comments: allComments,
+          postInfo: info
+        };
+
+        console.log(sendobj);
+
+        res.render('single-post', sendobj);
       });
 
       const hbsObj = {
@@ -406,16 +405,15 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
-
-          const sendobj = {
-            Comments: allComments,
-            postInfo: info
-          };
-
-          console.log(sendobj);
-
-          res.render('single-post', sendobj);
         });
+        const sendobj = {
+          Comments: allComments,
+          postInfo: info
+        };
+
+        console.log(sendobj);
+
+        res.render('single-post', sendobj);
       });
 
       const hbsObj = {
@@ -456,16 +454,16 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
-
-          const sendobj = {
-            Comments: allComments,
-            postInfo: info
-          };
-
-          console.log(sendobj);
-
-          res.render('single-post', sendobj);
         });
+
+        const sendobj = {
+          Comments: allComments,
+          postInfo: info
+        };
+
+        console.log(sendobj);
+
+        res.render('single-post', sendobj);
       });
 
       const hbsObj = {
