@@ -1,6 +1,8 @@
 # Project_2
 
-# Project 2: WhatChaMaCallIt
+[whatchamacallit live]: https://fullstackbc-project-02.herokuapp.com/
+
+# [WhatChaMaCallIt][whatchamacallit live]
 
 ## Description
 
@@ -31,8 +33,6 @@ WHEN the user creates a post
 THEN the user can view it from the home screen
 WHEN the user sees others post
 THEN the user can comment on it
-WHEN a user sees your post
-THEN they can comment on it
 ```
 
 ## Installation
@@ -45,28 +45,31 @@ npm i
 
 ## Usage
 
-Visit the website (linked below) sign up or log in, and start submitting crimes!
-
 - this screenshot is login page of WhatChaMaCallIt
-- ![login](public/images/login.png)
+  ![login](public/images/login.png)
+
 - this screenshot is homescreen page of WhatChaMaCallIt
-- ![home](public/images/home.png)
+  ![home](public/images/home.png)
+
 - this screenshot is forum page of WhatChaMaCallIt
-- ![forum](public/images/forum.png)
-- this screenshot is creat-post page of WhatChaMaCallIt,where user crest post
-- ![creat-post](public/images/create-post.png)
+  ![forum](public/images/forum.png)
+
+- this screenshot is create-post page of WhatChaMaCallIt, where user creates a post
+  ![creat-post](public/images/create-post.png)
+
 - this screenshot is home-with post page of WhatChaMaCallIt
-- ![home-with post](public/images/home-posts.png)
+  ![home-with post](public/images/home-posts.png)
+
 - this screenshot is post page of WhatChaMaCallIt with comment
-- ![commit](public/images/comments.png)
+  ![commit](public/images/comments.png)
 
 ## Deployed Website
 
-[WhatChaMaCallIt](https://fullstackbc-project-02.herokuapp.com/)
+[WhatChaMaCallIt Deployed link](https://fullstackbc-project-02.herokuapp.com/)
 
 ## Repository
 
-[WhatChaMaCallIt](https://github.com/tonycrosby-tech/Project_2)
+[WhatChaMaCallIt Repository](https://github.com/tonycrosby-tech/Project_2)
 
 ## Future Development
 
