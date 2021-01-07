@@ -107,7 +107,7 @@ table {
   box-sizing: border-box;
   text-indent: initial;
   border-spacing: 1px;
-  border-color: grey;
+  border-color: rgb(75, 74, 74);
 }
 
 nav ul a {
