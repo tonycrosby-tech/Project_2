@@ -46,22 +46,22 @@ npm i
 ## Usage
 
 - this screenshot is login page of WhatChaMaCallIt
-![login](public/images/login.png)
+  ![login](public/images/login.png)
 
 - this screenshot is homescreen page of WhatChaMaCallIt
-![home](public/images/home.png)
+  ![home](public/images/home.png)
 
 - this screenshot is forum page of WhatChaMaCallIt
-![forum](public/images/forum.png)
+  ![forum](public/images/forum.png)
 
 - this screenshot is create-post page of WhatChaMaCallIt, where user creates a post
-![creat-post](public/images/create-post.png)
+  ![creat-post](public/images/create-post.png)
 
 - this screenshot is home-with post page of WhatChaMaCallIt
-![home-with post](public/images/home-posts.png)
+  ![home-with post](public/images/home-posts.png)
 
 - this screenshot is post page of WhatChaMaCallIt with comment
-![commit](public/images/comments.png)
+  ![commit](public/images/comments.png)
 
 ## Deployed Website
 
