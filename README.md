@@ -56,7 +56,7 @@ npm i
 - this screenshot is forum page of WhatChaMaCallIt
 ![forum](public/images/forum.png)
 
-- this screenshot is creat-post page of WhatChaMaCallIt, where user creates a post
+- this screenshot is create-post page of WhatChaMaCallIt, where user creates a post
 ![creat-post](public/images/create-post.png)
 
 - this screenshot is home-with post page of WhatChaMaCallIt
