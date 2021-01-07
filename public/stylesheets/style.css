@@ -212,12 +212,6 @@ main {
   }
 }
 
-@media (max-width: 1540px) {
-  .break-words {
-    table-layout: fixed;
-    word-wrap: break-word;
-  }
-}
 .comment-section {
   line-height: 110%;
   margin: 2.8rem 0 1.68rem 0;
