@@ -310,6 +310,15 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
+
+          const sendobj = {
+            Comments: allComments,
+            postInfo: info
+          };
+
+          console.log(sendobj);
+
+          res.render('single-post', sendobj);
         });
       });
 
@@ -324,15 +333,6 @@ module.exports = function (app) {
       };
 
       info.push(hbsObj);
-
-      const sendobj = {
-        Comments: allComments,
-        postInfo: info
-      };
-
-      console.log(sendobj);
-
-      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/sports/:id', isAuthenticated, (_req, res) => {
@@ -359,6 +359,15 @@ module.exports = function (app) {
 
           allComments.push(hbssObj);
         });
+
+        const sendobj = {
+          Comments: allComments,
+          postInfo: info
+        };
+
+        console.log(sendobj);
+
+        res.render('single-post', sendobj);
       });
 
       const hbsObj = {
@@ -372,15 +381,6 @@ module.exports = function (app) {
       };
 
       info.push(hbsObj);
-
-      const sendobj = {
-        Comments: allComments,
-        postInfo: info
-      };
-
-      console.log(sendobj);
-
-      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/movies/:id', isAuthenticated, (_req, res) => {
@@ -406,6 +406,15 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
+
+          const sendobj = {
+            Comments: allComments,
+            postInfo: info
+          };
+
+          console.log(sendobj);
+
+          res.render('single-post', sendobj);
         });
       });
 
@@ -420,15 +429,6 @@ module.exports = function (app) {
       };
 
       info.push(hbsObj);
-
-      const sendobj = {
-        Comments: allComments,
-        postInfo: info
-      };
-
-      console.log(sendobj);
-
-      res.render('single-post', sendobj);
     });
   });
   app.get('/forum/category/books/:id', isAuthenticated, (_req, res) => {
@@ -456,6 +456,15 @@ module.exports = function (app) {
           };
 
           allComments.push(hbssObj);
+
+          const sendobj = {
+            Comments: allComments,
+            postInfo: info
+          };
+
+          console.log(sendobj);
+
+          res.render('single-post', sendobj);
         });
       });
 
@@ -470,15 +479,6 @@ module.exports = function (app) {
       };
 
       info.push(hbsObj);
-
-      const sendobj = {
-        Comments: allComments,
-        postInfo: info
-      };
-
-      console.log(sendobj);
-
-      res.render('single-post', sendobj);
     });
   });
 
