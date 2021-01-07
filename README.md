@@ -33,8 +33,6 @@ WHEN the user creates a post
 THEN the user can view it from the home screen
 WHEN the user sees others post
 THEN the user can comment on it
-WHEN a user sees your post
-THEN they can comment on it
 ```
 
 ## Installation
